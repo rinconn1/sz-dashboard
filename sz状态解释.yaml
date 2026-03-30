@@ -1,0 +1,995 @@
+- generic [ref=e2]:
+  - generic: 
+  - generic:  
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 广东政务服务网
+      - generic [ref=e8]: 深圳市房地产信息平台
+    - generic [ref=e9]:
+      - generic [ref=e10]: 登录
+      - generic [ref=e11] [cursor=pointer]: 旧版信息系统
+    - generic [ref=e60]:
+      - generic [ref=e62]:
+        - generic [ref=e78] [cursor=pointer]: 
+        - generic [ref=e80] [cursor=pointer]: 
+        - tablist [ref=e64]:
+          - tab "首 页" [ref=e65]
+          - tab "房源库 " [ref=e76]:
+            - text: 房源库
+            - generic: 
+          - tab "一手房成交 " [ref=e70]:
+            - text: 一手房成交
+            - generic: 
+          - tab "二手房成交 " [ref=e73]:
+            - text: 二手房成交
+            - generic: 
+          - tab "一手房预售房源 " [ref=e81]:
+            - text: 一手房预售房源
+            - generic: 
+          - tab "项目详情 " [selected] [ref=e84]:
+            - text: 项目详情
+            - generic [ref=e85]: 
+      - generic:
+        - tabpanel "项目详情 "
+  - iframe [active] [ref=e86]:
+    - generic [ref=f9e2]:
+      - generic [ref=f9e3]:
+        - generic [ref=f9e4]:
+          - generic [ref=f9e5]:
+            - text: 房源库
+            - generic [ref=f9e6]: 
+          - generic [ref=f9e7]:
+            - text: 一手房房源信息
+            - generic [ref=f9e8]: 
+          - generic [ref=f9e9]: 项目详情
+        - generic [ref=f9e12] [cursor=pointer]: 刷新
+      - generic [ref=f9e13]:
+        - generic [ref=f9e15]:
+          - generic [ref=f9e17]: 乐源雅居
+          - generic [ref=f9e18]:
+            - generic [ref=f9e20]:
+              - generic: 
+            - generic [ref=f9e31]:
+              - generic [ref=f9e32]:
+                - generic [ref=f9e33]: 预售总套数：
+                - generic [ref=f9e34]: "--"
+              - generic [ref=f9e35]:
+                - generic [ref=f9e36]: 预售总面积：
+                - generic [ref=f9e37]: "--"
+              - generic [ref=f9e38]:
+                - generic [ref=f9e39]: 现售总套数：
+                - generic [ref=f9e40]: "0"
+              - generic [ref=f9e41]:
+                - generic [ref=f9e42]: 现售总面积：
+                - generic [ref=f9e43]: "--"
+              - generic [ref=f9e44]:
+                - generic [ref=f9e45]: 售楼电话一：
+                - generic [ref=f9e46]: "--"
+              - generic [ref=f9e47]:
+                - generic [ref=f9e48]: 售楼电话二：
+                - generic [ref=f9e49]: "--"
+              - generic [ref=f9e50]:
+                - generic [ref=f9e51]: 土地合同号：
+                - generic [ref=f9e52]: 深地合字(2020)8005号
+              - generic [ref=f9e53]:
+                - generic [ref=f9e54]: 批准机关：
+                - generic [ref=f9e55]: 深圳市规划和自然资源局南山管理局
+              - generic [ref=f9e56]:
+                - generic [ref=f9e57]: 权属来源：
+                - generic [ref=f9e58]: 协议
+              - generic [ref=f9e59]:
+                - generic [ref=f9e60]: 受让日期：
+                - generic [ref=f9e61]: 2020-04-13
+              - generic [ref=f9e62]:
+                - generic [ref=f9e63]: 宗地位置：
+                - generic [ref=f9e64]: 南山区南头街道中山园路东面
+              - generic [ref=f9e65]:
+                - generic [ref=f9e66]: 宗地号：
+                - generic [ref=f9e67]: T503-0061
+              - generic [ref=f9e68]:
+                - generic [ref=f9e69]: 使用年限：
+                - generic [ref=f9e71]: 70年
+              - generic [ref=f9e72]:
+                - generic [ref=f9e73]: 补充协议：
+                - generic [ref=f9e74]: 补1、补2
+              - generic [ref=f9e75]:
+                - generic [ref=f9e76]: 房屋用途：
+                - generic [ref=f9e77]: 住宅
+              - generic [ref=f9e78]:
+                - generic [ref=f9e79]: 土地用途：
+                - generic [ref=f9e80]: 二类居住用地
+              - generic [ref=f9e81]:
+                - generic [ref=f9e82]: 土地等级：
+                - generic [ref=f9e83]: "--"
+              - generic [ref=f9e84]:
+                - generic [ref=f9e85]: 宗地面积：
+                - generic [ref=f9e86]: "3190.01"
+              - generic [ref=f9e87]:
+                - generic [ref=f9e88]: 总建筑面积：
+                - generic [ref=f9e89]: "11231"
+              - generic [ref=f9e90]:
+                - generic [ref=f9e91]: 基地面积：
+                - generic [ref=f9e92]: "--"
+              - generic [ref=f9e93]:
+                - generic [ref=f9e94]: 所在区域：
+                - generic [ref=f9e95]: 南山
+              - generic [ref=f9e96]:
+                - generic [ref=f9e97]: 工程监管机构：
+                - generic [ref=f9e98]: "--"
+              - generic [ref=f9e99]:
+                - generic [ref=f9e100]: 备注：
+                - generic [ref=f9e101]: "--"
+        - generic [ref=f9e103]:
+          - tablist [ref=f9e107]:
+            - tab "套房信息" [selected] [ref=f9e109]
+            - tab "详细信息" [ref=f9e110]
+          - generic [ref=f9e111]:
+            - tabpanel "套房信息" [ref=f9e112]:
+              - generic [ref=f9e113]:
+                - generic [ref=f9e114]:
+                  - generic [ref=f9e116]:
+                    - generic [ref=f9e117]:
+                      - generic [ref=f9e118]:
+                        - generic [ref=f9e119]: 楼栋号：
+                        - radiogroup [ref=f9e121]:
+                          - radio "乐源雅居" [checked] [ref=f9e122] [cursor=pointer]:
+                            - generic [ref=f9e123]: 乐源雅居
+                      - generic [ref=f9e124]:
+                        - generic [ref=f9e125]: 座号：
+                        - generic [ref=f9e128]:
+                          - textbox "请选择" [ref=f9e129] [cursor=pointer]: 未知
+                          - generic [ref=f9e131] [cursor=pointer]: 
+                      - generic [ref=f9e132]:
+                        - generic [ref=f9e133]: 层号：
+                        - generic [ref=f9e136]:
+                          - textbox "请选择" [ref=f9e137] [cursor=pointer]: 全部
+                          - generic [ref=f9e139] [cursor=pointer]: 
+                      - generic [ref=f9e140]:
+                        - generic [ref=f9e141]: 房号：
+                        - generic [ref=f9e143]:
+                          - textbox "请输入房号" [ref=f9e144]
+                          - generic [ref=f9e146] [cursor=pointer]: 
+                      - generic [ref=f9e147]:
+                        - generic [ref=f9e148]: 户型：
+                        - generic [ref=f9e151]:
+                          - textbox "请选择" [ref=f9e152] [cursor=pointer]: 全部
+                          - generic [ref=f9e154] [cursor=pointer]: 
+                      - generic [ref=f9e155]:
+                        - generic [ref=f9e156]: 状态：
+                        - generic [ref=f9e159]:
+                          - textbox "请选择" [ref=f9e160] [cursor=pointer]: 全部
+                          - generic [ref=f9e162] [cursor=pointer]: 
+                    - generic [ref=f9e164]: 状态解释
+                    - generic [ref=f9e165]:
+                      - generic [ref=f9e166]:
+                        - generic [ref=f9e167] [cursor=pointer]: "30层:"
+                        - list [ref=f9e169]:
+                          - listitem [ref=f9e170] [cursor=pointer]:
+                            - generic [ref=f9e171]:
+                              - generic [ref=f9e172]: "3001"
+                              - generic [ref=f9e173]: 住宅
+                            - generic [ref=f9e175]: 136.46㎡ | 17248377元
+                            - generic [ref=f9e176]: 期房待售
+                          - listitem [ref=f9e177] [cursor=pointer]:
+                            - generic [ref=f9e178]:
+                              - generic [ref=f9e179]: "3002"
+                              - generic [ref=f9e180]: 住宅
+                            - generic [ref=f9e182]: 216.74㎡ | 27178930元
+                            - generic [ref=f9e183]: 期房待售
+                          - listitem [ref=f9e184] [cursor=pointer]:
+                            - generic [ref=f9e185]:
+                              - generic [ref=f9e186]: "3003"
+                              - generic [ref=f9e187]: 住宅
+                            - generic [ref=f9e189]: 246.45㎡ | 32277493元
+                            - generic [ref=f9e190]: 期房待售
+                      - generic [ref=f9e191]:
+                        - generic [ref=f9e192] [cursor=pointer]: "29层:"
+                        - list [ref=f9e194]:
+                          - listitem [ref=f9e195] [cursor=pointer]:
+                            - generic [ref=f9e196]:
+                              - generic [ref=f9e197]: "2901"
+                              - generic [ref=f9e198]: 住宅
+                            - generic [ref=f9e200]: 89.51㎡ | 7268192元
+                            - generic [ref=f9e201]: 期房待售
+                          - listitem [ref=f9e202] [cursor=pointer]:
+                            - generic [ref=f9e203]:
+                              - generic [ref=f9e204]: "2905"
+                              - generic [ref=f9e205]: 住宅
+                            - generic [ref=f9e207]: 83.16㎡ | 6124447元
+                            - generic [ref=f9e208]: 期房待售
+                      - generic [ref=f9e209]:
+                        - generic [ref=f9e210] [cursor=pointer]: "28层:"
+                        - list [ref=f9e212]:
+                          - listitem [ref=f9e213] [cursor=pointer]:
+                            - generic [ref=f9e214]:
+                              - generic [ref=f9e215]: "2801"
+                              - generic [ref=f9e216]: 住宅
+                            - generic [ref=f9e218]: 89.51㎡ | 7250290元
+                            - generic [ref=f9e219]: 期房待售
+                          - listitem [ref=f9e220] [cursor=pointer]:
+                            - generic [ref=f9e221]:
+                              - generic [ref=f9e222]: "2802"
+                              - generic [ref=f9e223]: 住宅
+                            - generic [ref=f9e225]: 66.33㎡ | 4643085元
+                            - generic [ref=f9e226]: 期房待售
+                          - listitem [ref=f9e227] [cursor=pointer]:
+                            - generic [ref=f9e228]:
+                              - generic [ref=f9e229]: "2803"
+                              - generic [ref=f9e230]: 住宅
+                            - generic [ref=f9e232]: 66.33㎡ | 4680957元
+                            - generic [ref=f9e233]: 期房待售
+                          - listitem [ref=f9e234] [cursor=pointer]:
+                            - generic [ref=f9e235]:
+                              - generic [ref=f9e236]: "2805"
+                              - generic [ref=f9e237]: 住宅
+                            - generic [ref=f9e239]: 83.16㎡ | 6116131元
+                            - generic [ref=f9e240]: 期房待售
+                      - generic [ref=f9e241]:
+                        - generic [ref=f9e242] [cursor=pointer]: "27层:"
+                        - list [ref=f9e244]:
+                          - listitem [ref=f9e245] [cursor=pointer]:
+                            - generic [ref=f9e246]:
+                              - generic [ref=f9e247]: "2701"
+                              - generic [ref=f9e248]: 住宅
+                            - generic [ref=f9e250]: 89.51㎡ | 7232388元
+                            - generic [ref=f9e251]: 期房待售
+                          - listitem [ref=f9e252] [cursor=pointer]:
+                            - generic [ref=f9e253]:
+                              - generic [ref=f9e254]: "2702"
+                              - generic [ref=f9e255]: 住宅
+                            - generic [ref=f9e257]: 66.33㎡ | 4629819元
+                            - generic [ref=f9e258]: 期房待售
+                          - listitem [ref=f9e259] [cursor=pointer]:
+                            - generic [ref=f9e260]:
+                              - generic [ref=f9e261]: "2703"
+                              - generic [ref=f9e262]: 住宅
+                            - generic [ref=f9e264]: 66.33㎡ | 4667691元
+                            - generic [ref=f9e265]: 期房待售
+                          - listitem [ref=f9e266] [cursor=pointer]:
+                            - generic [ref=f9e267]:
+                              - generic [ref=f9e268]: "2704"
+                              - generic [ref=f9e269]: 住宅
+                            - generic [ref=f9e271]: 76.07㎡ | 5324269元
+                            - generic [ref=f9e272]: 期房待售
+                          - listitem [ref=f9e273] [cursor=pointer]:
+                            - generic [ref=f9e274]:
+                              - generic [ref=f9e275]: "2705"
+                              - generic [ref=f9e276]: 住宅
+                            - generic [ref=f9e278]: 83.16㎡ | 6107815元
+                            - generic [ref=f9e279]: 期房待售
+                      - generic [ref=f9e280]:
+                        - generic [ref=f9e281] [cursor=pointer]: "26层:"
+                        - list [ref=f9e283]:
+                          - listitem [ref=f9e284] [cursor=pointer]:
+                            - generic [ref=f9e285]:
+                              - generic [ref=f9e286]: "2601"
+                              - generic [ref=f9e287]: 住宅
+                            - generic [ref=f9e289]: 89.51㎡ | 7214486元
+                            - generic [ref=f9e290]: 期房待售
+                          - listitem [ref=f9e291] [cursor=pointer]:
+                            - generic [ref=f9e292]:
+                              - generic [ref=f9e293]: "2602"
+                              - generic [ref=f9e294]: 住宅
+                            - generic [ref=f9e296]: 66.33㎡ | 4616553元
+                            - generic [ref=f9e297]: 期房待售
+                          - listitem [ref=f9e298] [cursor=pointer]:
+                            - generic [ref=f9e299]:
+                              - generic [ref=f9e300]: "2603"
+                              - generic [ref=f9e301]: 住宅
+                            - generic [ref=f9e303]: 66.33㎡ | 4654425元
+                            - generic [ref=f9e304]: 期房待售
+                          - listitem [ref=f9e305] [cursor=pointer]:
+                            - generic [ref=f9e306]:
+                              - generic [ref=f9e307]: "2604"
+                              - generic [ref=f9e308]: 住宅
+                            - generic [ref=f9e310]: 76.07㎡ | 5316662元
+                            - generic [ref=f9e311]: 期房待售
+                          - listitem [ref=f9e312] [cursor=pointer]:
+                            - generic [ref=f9e313]:
+                              - generic [ref=f9e314]: "2605"
+                              - generic [ref=f9e315]: 住宅
+                            - generic [ref=f9e317]: 83.16㎡ | 6099499元
+                            - generic [ref=f9e318]: 期房待售
+                      - generic [ref=f9e319]:
+                        - generic [ref=f9e320] [cursor=pointer]: "25层:"
+                        - list [ref=f9e322]:
+                          - listitem [ref=f9e323] [cursor=pointer]:
+                            - generic [ref=f9e324]:
+                              - generic [ref=f9e325]: "2501"
+                              - generic [ref=f9e326]: 住宅
+                            - generic [ref=f9e328]: 89.51㎡ | 7196584元
+                            - generic [ref=f9e329]: 期房待售
+                          - listitem [ref=f9e330] [cursor=pointer]:
+                            - generic [ref=f9e331]:
+                              - generic [ref=f9e332]: "2502"
+                              - generic [ref=f9e333]: 住宅
+                            - generic [ref=f9e335]: 66.33㎡ | 4603287元
+                            - generic [ref=f9e336]: 期房待售
+                          - listitem [ref=f9e337] [cursor=pointer]:
+                            - generic [ref=f9e338]:
+                              - generic [ref=f9e339]: "2503"
+                              - generic [ref=f9e340]: 住宅
+                            - generic [ref=f9e342]: 66.33㎡ | 4641159元
+                            - generic [ref=f9e343]: 期房待售
+                          - listitem [ref=f9e344] [cursor=pointer]:
+                            - generic [ref=f9e345]:
+                              - generic [ref=f9e346]: "2504"
+                              - generic [ref=f9e347]: 住宅
+                            - generic [ref=f9e349]: 76.07㎡ | 5309055元
+                            - generic [ref=f9e350]: 期房待售
+                          - listitem [ref=f9e351] [cursor=pointer]:
+                            - generic [ref=f9e352]:
+                              - generic [ref=f9e353]: "2505"
+                              - generic [ref=f9e354]: 住宅
+                            - generic [ref=f9e356]: 83.16㎡ | 6091183元
+                            - generic [ref=f9e357]: 期房待售
+                      - generic [ref=f9e358]:
+                        - generic [ref=f9e359] [cursor=pointer]: "24层:"
+                        - list [ref=f9e361]:
+                          - listitem [ref=f9e362] [cursor=pointer]:
+                            - generic [ref=f9e363]:
+                              - generic [ref=f9e364]: "2401"
+                              - generic [ref=f9e365]: 住宅
+                            - generic [ref=f9e367]: 89.51㎡ | 7160780元
+                            - generic [ref=f9e368]: 期房待售
+                          - listitem [ref=f9e369] [cursor=pointer]:
+                            - generic [ref=f9e370]:
+                              - generic [ref=f9e371]: "2402"
+                              - generic [ref=f9e372]: 住宅
+                            - generic [ref=f9e374]: 66.33㎡ | 4576755元
+                            - generic [ref=f9e375]: 期房待售
+                          - listitem [ref=f9e376] [cursor=pointer]:
+                            - generic [ref=f9e377]:
+                              - generic [ref=f9e378]: "2403"
+                              - generic [ref=f9e379]: 住宅
+                            - generic [ref=f9e381]: 66.33㎡ | 4614627元
+                            - generic [ref=f9e382]: 期房待售
+                          - listitem [ref=f9e383] [cursor=pointer]:
+                            - generic [ref=f9e384]:
+                              - generic [ref=f9e385]: "2404"
+                              - generic [ref=f9e386]: 住宅
+                            - generic [ref=f9e388]: 76.07㎡ | 5293841元
+                            - generic [ref=f9e389]: 期房待售
+                          - listitem [ref=f9e390] [cursor=pointer]:
+                            - generic [ref=f9e391]:
+                              - generic [ref=f9e392]: "2405"
+                              - generic [ref=f9e393]: 住宅
+                            - generic [ref=f9e395]: 83.16㎡ | 6074551元
+                            - generic [ref=f9e396]: 期房待售
+                      - generic [ref=f9e397]:
+                        - generic [ref=f9e398] [cursor=pointer]: "23层:"
+                        - list [ref=f9e400]:
+                          - listitem [ref=f9e401] [cursor=pointer]:
+                            - generic [ref=f9e402]:
+                              - generic [ref=f9e403]: "2301"
+                              - generic [ref=f9e404]: 住宅
+                            - generic [ref=f9e406]: 89.51㎡ | 7142878元
+                            - generic [ref=f9e407]: 期房待售
+                          - listitem [ref=f9e408] [cursor=pointer]:
+                            - generic [ref=f9e409]:
+                              - generic [ref=f9e410]: "2302"
+                              - generic [ref=f9e411]: 住宅
+                            - generic [ref=f9e413]: 66.33㎡ | 4563489元
+                            - generic [ref=f9e414]: 期房待售
+                          - listitem [ref=f9e415] [cursor=pointer]:
+                            - generic [ref=f9e416]:
+                              - generic [ref=f9e417]: "2303"
+                              - generic [ref=f9e418]: 住宅
+                            - generic [ref=f9e420]: 66.33㎡ | 4601361元
+                            - generic [ref=f9e421]: 期房待售
+                          - listitem [ref=f9e422] [cursor=pointer]:
+                            - generic [ref=f9e423]:
+                              - generic [ref=f9e424]: "2304"
+                              - generic [ref=f9e425]: 住宅
+                            - generic [ref=f9e427]: 76.07㎡ | 5286234元
+                            - generic [ref=f9e428]: 期房待售
+                          - listitem [ref=f9e429] [cursor=pointer]:
+                            - generic [ref=f9e430]:
+                              - generic [ref=f9e431]: "2305"
+                              - generic [ref=f9e432]: 住宅
+                            - generic [ref=f9e434]: 83.16㎡ | 6066235元
+                            - generic [ref=f9e435]: 期房待售
+                      - generic [ref=f9e436]:
+                        - generic [ref=f9e437] [cursor=pointer]: "22层:"
+                        - list [ref=f9e439]:
+                          - listitem [ref=f9e440] [cursor=pointer]:
+                            - generic [ref=f9e441]:
+                              - generic [ref=f9e442]: "2201"
+                              - generic [ref=f9e443]: 住宅
+                            - generic [ref=f9e445]: 89.51㎡ | 7124976元
+                            - generic [ref=f9e446]: 期房待售
+                          - listitem [ref=f9e447] [cursor=pointer]:
+                            - generic [ref=f9e448]:
+                              - generic [ref=f9e449]: "2202"
+                              - generic [ref=f9e450]: 住宅
+                            - generic [ref=f9e452]: 66.33㎡ | 4550223元
+                            - generic [ref=f9e453]: 期房待售
+                          - listitem [ref=f9e454] [cursor=pointer]:
+                            - generic [ref=f9e455]:
+                              - generic [ref=f9e456]: "2203"
+                              - generic [ref=f9e457]: 住宅
+                            - generic [ref=f9e459]: 66.33㎡ | 4588095元
+                            - generic [ref=f9e460]: 期房待售
+                          - listitem [ref=f9e461] [cursor=pointer]:
+                            - generic [ref=f9e462]:
+                              - generic [ref=f9e463]: "2204"
+                              - generic [ref=f9e464]: 住宅
+                            - generic [ref=f9e466]: 76.07㎡ | 5278627元
+                            - generic [ref=f9e467]: 期房待售
+                          - listitem [ref=f9e468] [cursor=pointer]:
+                            - generic [ref=f9e469]:
+                              - generic [ref=f9e470]: "2205"
+                              - generic [ref=f9e471]: 住宅
+                            - generic [ref=f9e473]: 83.16㎡ | 6057919元
+                            - generic [ref=f9e474]: 期房待售
+                      - generic [ref=f9e475]:
+                        - generic [ref=f9e476] [cursor=pointer]: "21层:"
+                        - list [ref=f9e478]:
+                          - listitem [ref=f9e479] [cursor=pointer]:
+                            - generic [ref=f9e480]:
+                              - generic [ref=f9e481]: "2101"
+                              - generic [ref=f9e482]: 住宅
+                            - generic [ref=f9e484]: 89.51㎡ | 7107074元
+                            - generic [ref=f9e485]: 期房待售
+                          - listitem [ref=f9e486] [cursor=pointer]:
+                            - generic [ref=f9e487]:
+                              - generic [ref=f9e488]: "2102"
+                              - generic [ref=f9e489]: 住宅
+                            - generic [ref=f9e491]: 66.33㎡ | 4536957元
+                            - generic [ref=f9e492]: 期房待售
+                          - listitem [ref=f9e493] [cursor=pointer]:
+                            - generic [ref=f9e494]:
+                              - generic [ref=f9e495]: "2103"
+                              - generic [ref=f9e496]: 住宅
+                            - generic [ref=f9e498]: 66.33㎡ | 4574829元
+                            - generic [ref=f9e499]: 期房待售
+                          - listitem [ref=f9e500] [cursor=pointer]:
+                            - generic [ref=f9e501]:
+                              - generic [ref=f9e502]: "2104"
+                              - generic [ref=f9e503]: 住宅
+                            - generic [ref=f9e505]: 76.07㎡ | 5271020元
+                            - generic [ref=f9e506]: 期房待售
+                          - listitem [ref=f9e507] [cursor=pointer]:
+                            - generic [ref=f9e508]:
+                              - generic [ref=f9e509]: "2105"
+                              - generic [ref=f9e510]: 住宅
+                            - generic [ref=f9e512]: 83.16㎡ | 6049603元
+                            - generic [ref=f9e513]: 期房待售
+                      - generic [ref=f9e514]:
+                        - generic [ref=f9e515] [cursor=pointer]: "20层:"
+                        - list [ref=f9e517]:
+                          - listitem [ref=f9e518] [cursor=pointer]:
+                            - generic [ref=f9e519]:
+                              - generic [ref=f9e520]: "2001"
+                              - generic [ref=f9e521]: 住宅
+                            - generic [ref=f9e523]: 89.51㎡ | 7089172元
+                            - generic [ref=f9e524]: 期房待售
+                          - listitem [ref=f9e525] [cursor=pointer]:
+                            - generic [ref=f9e526]:
+                              - generic [ref=f9e527]: "2002"
+                              - generic [ref=f9e528]: 住宅
+                            - generic [ref=f9e530]: 66.33㎡ | 4523691元
+                            - generic [ref=f9e531]: 期房待售
+                          - listitem [ref=f9e532] [cursor=pointer]:
+                            - generic [ref=f9e533]:
+                              - generic [ref=f9e534]: "2003"
+                              - generic [ref=f9e535]: 住宅
+                            - generic [ref=f9e537]: 66.33㎡ | 4561563元
+                            - generic [ref=f9e538]: 期房待售
+                          - listitem [ref=f9e539] [cursor=pointer]:
+                            - generic [ref=f9e540]:
+                              - generic [ref=f9e541]: "2004"
+                              - generic [ref=f9e542]: 住宅
+                            - generic [ref=f9e544]: 76.07㎡ | 5263413元
+                            - generic [ref=f9e545]: 期房待售
+                          - listitem [ref=f9e546] [cursor=pointer]:
+                            - generic [ref=f9e547]:
+                              - generic [ref=f9e548]: "2005"
+                              - generic [ref=f9e549]: 住宅
+                            - generic [ref=f9e551]: 83.16㎡ | 6041287元
+                            - generic [ref=f9e552]: 期房待售
+                      - generic [ref=f9e553]:
+                        - generic [ref=f9e554] [cursor=pointer]: "19层:"
+                        - list [ref=f9e556]:
+                          - listitem [ref=f9e557] [cursor=pointer]:
+                            - generic [ref=f9e558]:
+                              - generic [ref=f9e559]: "1901"
+                              - generic [ref=f9e560]: 住宅
+                            - generic [ref=f9e562]: 89.51㎡ | 7075745元
+                            - generic [ref=f9e563]: 期房待售
+                          - listitem [ref=f9e564] [cursor=pointer]:
+                            - generic [ref=f9e565]:
+                              - generic [ref=f9e566]: "1902"
+                              - generic [ref=f9e567]: 住宅
+                            - generic [ref=f9e569]: 66.33㎡ | 4513741元
+                            - generic [ref=f9e570]: 期房待售
+                          - listitem [ref=f9e571] [cursor=pointer]:
+                            - generic [ref=f9e572]:
+                              - generic [ref=f9e573]: "1903"
+                              - generic [ref=f9e574]: 住宅
+                            - generic [ref=f9e576]: 66.33㎡ | 4551614元
+                            - generic [ref=f9e577]: 期房待售
+                          - listitem [ref=f9e578] [cursor=pointer]:
+                            - generic [ref=f9e579]:
+                              - generic [ref=f9e580]: "1904"
+                              - generic [ref=f9e581]: 住宅
+                            - generic [ref=f9e583]: 76.07㎡ | 5255806元
+                            - generic [ref=f9e584]: 期房待售
+                          - listitem [ref=f9e585] [cursor=pointer]:
+                            - generic [ref=f9e586]:
+                              - generic [ref=f9e587]: "1905"
+                              - generic [ref=f9e588]: 住宅
+                            - generic [ref=f9e590]: 83.16㎡ | 6032971元
+                            - generic [ref=f9e591]: 期房待售
+                      - generic [ref=f9e592]:
+                        - generic [ref=f9e593] [cursor=pointer]: "18层:"
+                        - list [ref=f9e595]:
+                          - listitem [ref=f9e596] [cursor=pointer]:
+                            - generic [ref=f9e597]:
+                              - generic [ref=f9e598]: "1801"
+                              - generic [ref=f9e599]: 住宅
+                            - generic [ref=f9e601]: 89.5㎡ | 7043630元
+                            - generic [ref=f9e602]: 期房待售
+                          - listitem [ref=f9e603] [cursor=pointer]:
+                            - generic [ref=f9e604]:
+                              - generic [ref=f9e605]: "1804"
+                              - generic [ref=f9e606]: 住宅
+                            - generic [ref=f9e608]: 76.06㎡ | 5239903元
+                            - generic [ref=f9e609]: 期房待售
+                          - listitem [ref=f9e610] [cursor=pointer]:
+                            - generic [ref=f9e611]:
+                              - generic [ref=f9e612]: "1805"
+                              - generic [ref=f9e613]: 住宅
+                            - generic [ref=f9e615]: 83.15㎡ | 6015615元
+                            - generic [ref=f9e616]: 期房待售
+                      - generic [ref=f9e617]:
+                        - generic [ref=f9e618] [cursor=pointer]: "17层:"
+                        - list [ref=f9e620]:
+                          - listitem [ref=f9e621] [cursor=pointer]:
+                            - generic [ref=f9e622]:
+                              - generic [ref=f9e623]: "1701"
+                              - generic [ref=f9e624]: 住宅
+                            - generic [ref=f9e626]: 89.5㎡ | 7030205元
+                            - generic [ref=f9e627]: 期房待售
+                          - listitem [ref=f9e628] [cursor=pointer]:
+                            - generic [ref=f9e629]:
+                              - generic [ref=f9e630]: "1704"
+                              - generic [ref=f9e631]: 住宅
+                            - generic [ref=f9e633]: 76.06㎡ | 5232297元
+                            - generic [ref=f9e634]: 期房待售
+                          - listitem [ref=f9e635] [cursor=pointer]:
+                            - generic [ref=f9e636]:
+                              - generic [ref=f9e637]: "1705"
+                              - generic [ref=f9e638]: 住宅
+                            - generic [ref=f9e640]: 83.15㎡ | 6007300元
+                            - generic [ref=f9e641]: 期房待售
+                      - generic [ref=f9e642]:
+                        - generic [ref=f9e643] [cursor=pointer]: "16层:"
+                        - list [ref=f9e645]:
+                          - listitem [ref=f9e646] [cursor=pointer]:
+                            - generic [ref=f9e647]:
+                              - generic [ref=f9e648]: "1601"
+                              - generic [ref=f9e649]: 住宅
+                            - generic [ref=f9e651]: 89.5㎡ | 7016780元
+                            - generic [ref=f9e652]: 期房待售
+                          - listitem [ref=f9e653] [cursor=pointer]:
+                            - generic [ref=f9e654]:
+                              - generic [ref=f9e655]: "1604"
+                              - generic [ref=f9e656]: 住宅
+                            - generic [ref=f9e658]: 76.06㎡ | 5224691元
+                            - generic [ref=f9e659]: 期房待售
+                          - listitem [ref=f9e660] [cursor=pointer]:
+                            - generic [ref=f9e661]:
+                              - generic [ref=f9e662]: "1605"
+                              - generic [ref=f9e663]: 住宅
+                            - generic [ref=f9e665]: 83.15㎡ | 5998985元
+                            - generic [ref=f9e666]: 期房待售
+                      - generic [ref=f9e667]:
+                        - generic [ref=f9e668] [cursor=pointer]: "15层:"
+                        - list [ref=f9e670]:
+                          - listitem [ref=f9e671] [cursor=pointer]:
+                            - generic [ref=f9e672]:
+                              - generic [ref=f9e673]: "1501"
+                              - generic [ref=f9e674]: 住宅
+                            - generic [ref=f9e676]: 89.5㎡ | 7003355元
+                            - generic [ref=f9e677]: 期房待售
+                          - listitem [ref=f9e678] [cursor=pointer]:
+                            - generic [ref=f9e679]:
+                              - generic [ref=f9e680]: "1504"
+                              - generic [ref=f9e681]: 住宅
+                            - generic [ref=f9e683]: 76.06㎡ | 5217085元
+                            - generic [ref=f9e684]: 期房待售
+                          - listitem [ref=f9e685] [cursor=pointer]:
+                            - generic [ref=f9e686]:
+                              - generic [ref=f9e687]: "1505"
+                              - generic [ref=f9e688]: 住宅
+                            - generic [ref=f9e690]: 83.15㎡ | 5990670元
+                            - generic [ref=f9e691]: 期房待售
+                      - generic [ref=f9e692]:
+                        - generic [ref=f9e693] [cursor=pointer]: "14层:"
+                        - list [ref=f9e695]:
+                          - listitem [ref=f9e696] [cursor=pointer]:
+                            - generic [ref=f9e697]:
+                              - generic [ref=f9e698]: "1401"
+                              - generic [ref=f9e699]: 住宅
+                            - generic [ref=f9e701]: 89.5㎡ | 6989930元
+                            - generic [ref=f9e702]: 期房待售
+                          - listitem [ref=f9e703] [cursor=pointer]:
+                            - generic [ref=f9e704]:
+                              - generic [ref=f9e705]: "1404"
+                              - generic [ref=f9e706]: 住宅
+                            - generic [ref=f9e708]: 76.06㎡ | 5209479元
+                            - generic [ref=f9e709]: 期房待售
+                          - listitem [ref=f9e710] [cursor=pointer]:
+                            - generic [ref=f9e711]:
+                              - generic [ref=f9e712]: "1405"
+                              - generic [ref=f9e713]: 住宅
+                            - generic [ref=f9e715]: 83.15㎡ | 5982355元
+                            - generic [ref=f9e716]: 期房待售
+                      - generic [ref=f9e717]:
+                        - generic [ref=f9e718] [cursor=pointer]: "13层:"
+                        - list [ref=f9e720]:
+                          - listitem [ref=f9e721] [cursor=pointer]:
+                            - generic [ref=f9e722]:
+                              - generic [ref=f9e723]: "1301"
+                              - generic [ref=f9e724]: 住宅
+                            - generic [ref=f9e726]: 89.51㎡ | 6959382元
+                            - generic [ref=f9e727]: 期房待售
+                          - listitem [ref=f9e728] [cursor=pointer]:
+                            - generic [ref=f9e729]:
+                              - generic [ref=f9e730]: "1304"
+                              - generic [ref=f9e731]: 住宅
+                            - generic [ref=f9e733]: 76.07㎡ | 5194950元
+                            - generic [ref=f9e734]: 期房待售
+                          - listitem [ref=f9e735] [cursor=pointer]:
+                            - generic [ref=f9e736]:
+                              - generic [ref=f9e737]: "1305"
+                              - generic [ref=f9e738]: 住宅
+                            - generic [ref=f9e740]: 83.16㎡ | 5966443元
+                            - generic [ref=f9e741]: 期房待售
+                      - generic [ref=f9e742]:
+                        - generic [ref=f9e743] [cursor=pointer]: "12层:"
+                        - list [ref=f9e745]:
+                          - listitem [ref=f9e746] [cursor=pointer]:
+                            - generic [ref=f9e747]:
+                              - generic [ref=f9e748]: "1201"
+                              - generic [ref=f9e749]: 住宅
+                            - generic [ref=f9e751]: 89.51㎡ | 6945956元
+                            - generic [ref=f9e752]: 期房待售
+                          - listitem [ref=f9e753] [cursor=pointer]:
+                            - generic [ref=f9e754]:
+                              - generic [ref=f9e755]: "1204"
+                              - generic [ref=f9e756]: 住宅
+                            - generic [ref=f9e758]: 76.07㎡ | 5187343元
+                            - generic [ref=f9e759]: 期房待售
+                          - listitem [ref=f9e760] [cursor=pointer]:
+                            - generic [ref=f9e761]:
+                              - generic [ref=f9e762]: "1205"
+                              - generic [ref=f9e763]: 住宅
+                            - generic [ref=f9e765]: 83.16㎡ | 5958127元
+                            - generic [ref=f9e766]: 期房待售
+                      - generic [ref=f9e767]:
+                        - generic [ref=f9e768] [cursor=pointer]: "11层:"
+                        - list [ref=f9e770]:
+                          - listitem [ref=f9e771] [cursor=pointer]:
+                            - generic [ref=f9e772]:
+                              - generic [ref=f9e773]: "1101"
+                              - generic [ref=f9e774]: 住宅
+                            - generic [ref=f9e776]: 89.51㎡ | 6932529元
+                            - generic [ref=f9e777]: 期房待售
+                          - listitem [ref=f9e778] [cursor=pointer]:
+                            - generic [ref=f9e779]:
+                              - generic [ref=f9e780]: "1104"
+                              - generic [ref=f9e781]: 住宅
+                            - generic [ref=f9e783]: 76.07㎡ | 5179736元
+                            - generic [ref=f9e784]: 期房待售
+                          - listitem [ref=f9e785] [cursor=pointer]:
+                            - generic [ref=f9e786]:
+                              - generic [ref=f9e787]: "1105"
+                              - generic [ref=f9e788]: 住宅
+                            - generic [ref=f9e790]: 83.16㎡ | 5949811元
+                            - generic [ref=f9e791]: 期房待售
+                      - generic [ref=f9e792]:
+                        - generic [ref=f9e793] [cursor=pointer]: "10层:"
+                        - list [ref=f9e795]:
+                          - listitem [ref=f9e796] [cursor=pointer]:
+                            - generic [ref=f9e797]:
+                              - generic [ref=f9e798]: "1001"
+                              - generic [ref=f9e799]: 住宅
+                            - generic [ref=f9e801]: 89.51㎡ | 6919103元
+                            - generic [ref=f9e802]: 期房待售
+                          - listitem [ref=f9e803] [cursor=pointer]:
+                            - generic [ref=f9e804]:
+                              - generic [ref=f9e805]: "1004"
+                              - generic [ref=f9e806]: 住宅
+                            - generic [ref=f9e808]: 76.07㎡ | 5172129元
+                            - generic [ref=f9e809]: 期房待售
+                          - listitem [ref=f9e810] [cursor=pointer]:
+                            - generic [ref=f9e811]:
+                              - generic [ref=f9e812]: "1005"
+                              - generic [ref=f9e813]: 住宅
+                            - generic [ref=f9e815]: 83.16㎡ | 5941495元
+                            - generic [ref=f9e816]: 期房待售
+                      - generic [ref=f9e817]:
+                        - generic [ref=f9e818] [cursor=pointer]: "09层:"
+                        - list [ref=f9e820]:
+                          - listitem [ref=f9e821] [cursor=pointer]:
+                            - generic [ref=f9e822]:
+                              - generic [ref=f9e823]: "901"
+                              - generic [ref=f9e824]: 住宅
+                            - generic [ref=f9e826]: 89.51㎡ | 6910152元
+                            - generic [ref=f9e827]: 期房待售
+                          - listitem [ref=f9e828] [cursor=pointer]:
+                            - generic [ref=f9e829]:
+                              - generic [ref=f9e830]: "904"
+                              - generic [ref=f9e831]: 住宅
+                            - generic [ref=f9e833]: 76.07㎡ | 5164522元
+                            - generic [ref=f9e834]: 期房待售
+                          - listitem [ref=f9e835] [cursor=pointer]:
+                            - generic [ref=f9e836]:
+                              - generic [ref=f9e837]: "905"
+                              - generic [ref=f9e838]: 住宅
+                            - generic [ref=f9e840]: 83.16㎡ | 5933179元
+                            - generic [ref=f9e841]: 期房待售
+                      - generic [ref=f9e842]:
+                        - generic [ref=f9e843] [cursor=pointer]: "08层:"
+                        - list [ref=f9e845]:
+                          - listitem [ref=f9e846] [cursor=pointer]:
+                            - generic [ref=f9e847]:
+                              - generic [ref=f9e848]: "801"
+                              - generic [ref=f9e849]: 住宅
+                            - generic [ref=f9e851]: 89.51㎡ | 6883299元
+                            - generic [ref=f9e852]: 期房待售
+                          - listitem [ref=f9e853] [cursor=pointer]:
+                            - generic [ref=f9e854]:
+                              - generic [ref=f9e855]: "804"
+                              - generic [ref=f9e856]: 住宅
+                            - generic [ref=f9e858]: 76.07㎡ | 5149308元
+                            - generic [ref=f9e859]: 期房待售
+                          - listitem [ref=f9e860] [cursor=pointer]:
+                            - generic [ref=f9e861]:
+                              - generic [ref=f9e862]: "805"
+                              - generic [ref=f9e863]: 住宅
+                            - generic [ref=f9e865]: 83.16㎡ | 5916547元
+                            - generic [ref=f9e866]: 期房待售
+                      - generic [ref=f9e867]:
+                        - generic [ref=f9e868] [cursor=pointer]: "07层:"
+                        - list [ref=f9e870]:
+                          - listitem [ref=f9e871] [cursor=pointer]:
+                            - generic [ref=f9e872]:
+                              - generic [ref=f9e873]: "701"
+                              - generic [ref=f9e874]: 住宅
+                            - generic [ref=f9e876]: 89.51㎡ | 6874348元
+                            - generic [ref=f9e877]: 期房待售
+                          - listitem [ref=f9e878] [cursor=pointer]:
+                            - generic [ref=f9e879]:
+                              - generic [ref=f9e880]: "704"
+                              - generic [ref=f9e881]: 住宅
+                            - generic [ref=f9e883]: 76.07㎡ | 5141701元
+                            - generic [ref=f9e884]: 期房待售
+                          - listitem [ref=f9e885] [cursor=pointer]:
+                            - generic [ref=f9e886]:
+                              - generic [ref=f9e887]: "705"
+                              - generic [ref=f9e888]: 住宅
+                            - generic [ref=f9e890]: 83.16㎡ | 5908231元
+                            - generic [ref=f9e891]: 期房待售
+                      - generic [ref=f9e892]:
+                        - generic [ref=f9e893] [cursor=pointer]: "06层:"
+                        - list [ref=f9e895]:
+                          - listitem [ref=f9e896] [cursor=pointer]:
+                            - generic [ref=f9e897]:
+                              - generic [ref=f9e898]: "601"
+                              - generic [ref=f9e899]: 住宅
+                            - generic [ref=f9e901]: 89.51㎡ | 6865397元
+                            - generic [ref=f9e902]: 期房待售
+                          - listitem [ref=f9e903] [cursor=pointer]:
+                            - generic [ref=f9e904]:
+                              - generic [ref=f9e905]: "604"
+                              - generic [ref=f9e906]: 住宅
+                            - generic [ref=f9e908]: 76.07㎡ | 5134094元
+                            - generic [ref=f9e909]: 期房待售
+                          - listitem [ref=f9e910] [cursor=pointer]:
+                            - generic [ref=f9e911]:
+                              - generic [ref=f9e912]: "605"
+                              - generic [ref=f9e913]: 住宅
+                            - generic [ref=f9e915]: 83.16㎡ | 5899915元
+                            - generic [ref=f9e916]: 期房待售
+                      - generic [ref=f9e917]:
+                        - generic [ref=f9e918] [cursor=pointer]: "05层:"
+                        - list [ref=f9e920]:
+                          - listitem [ref=f9e921] [cursor=pointer]:
+                            - generic [ref=f9e922]:
+                              - generic [ref=f9e923]: "501"
+                              - generic [ref=f9e924]: 住宅
+                            - generic [ref=f9e926]: 89.51㎡ | 6856446元
+                            - generic [ref=f9e927]: 期房待售
+                          - listitem [ref=f9e928] [cursor=pointer]:
+                            - generic [ref=f9e929]:
+                              - generic [ref=f9e930]: "504"
+                              - generic [ref=f9e931]: 住宅
+                            - generic [ref=f9e933]: 76.07㎡ | 5126487元
+                            - generic [ref=f9e934]: 期房待售
+                          - listitem [ref=f9e935] [cursor=pointer]:
+                            - generic [ref=f9e936]:
+                              - generic [ref=f9e937]: "505"
+                              - generic [ref=f9e938]: 住宅
+                            - generic [ref=f9e940]: 83.16㎡ | 5891599元
+                            - generic [ref=f9e941]: 期房待售
+                      - generic [ref=f9e942]:
+                        - generic [ref=f9e943] [cursor=pointer]: "04层:"
+                        - list [ref=f9e945]:
+                          - listitem [ref=f9e946] [cursor=pointer]:
+                            - generic [ref=f9e947]:
+                              - generic [ref=f9e948]: "401"
+                              - generic [ref=f9e949]: 住宅
+                            - generic [ref=f9e951]: 89.51㎡ | 6847495元
+                            - generic [ref=f9e952]: 期房待售
+                          - listitem [ref=f9e953] [cursor=pointer]:
+                            - generic [ref=f9e954]:
+                              - generic [ref=f9e955]: "405"
+                              - generic [ref=f9e956]: 住宅
+                            - generic [ref=f9e958]: 83.16㎡ | 5883283元
+                            - generic [ref=f9e959]: 期房待售
+                      - generic [ref=f9e960]:
+                        - generic [ref=f9e961] [cursor=pointer]: "03层:"
+                        - list [ref=f9e963]:
+                          - listitem [ref=f9e964] [cursor=pointer]:
+                            - generic [ref=f9e965]:
+                              - generic [ref=f9e966]: "301"
+                              - generic [ref=f9e967]: 住宅
+                            - generic [ref=f9e969]: 89.51㎡ | 6838544元
+                            - generic [ref=f9e970]: 期房待售
+                          - listitem [ref=f9e971] [cursor=pointer]:
+                            - generic [ref=f9e972]:
+                              - generic [ref=f9e973]: "305"
+                              - generic [ref=f9e974]: 住宅
+                            - generic [ref=f9e976]: 83.16㎡ | 5874967元
+                            - generic [ref=f9e977]: 期房待售
+                      - generic [ref=f9e978]:
+                        - generic [ref=f9e979] [cursor=pointer]: "02层:"
+                        - list [ref=f9e981]:
+                          - listitem [ref=f9e982] [cursor=pointer]:
+                            - generic [ref=f9e983]:
+                              - generic [ref=f9e984]: "201"
+                              - generic [ref=f9e985]: 住宅
+                            - generic [ref=f9e987]: 89.51㎡ | 6919103元
+                            - generic [ref=f9e988]: 期房待售
+                          - listitem [ref=f9e989] [cursor=pointer]:
+                            - generic [ref=f9e990]:
+                              - generic [ref=f9e991]: "205"
+                              - generic [ref=f9e992]: 住宅
+                            - generic [ref=f9e994]: 83.11㎡ | 5946234元
+                            - generic [ref=f9e995]: 期房待售
+                  - generic [ref=f9e997]:
+                    - heading "楼栋信息" [level=2] [ref=f9e999]
+                    - generic [ref=f9e1000]:
+                      - generic [ref=f9e1001]:
+                        - generic [ref=f9e1002]:
+                          - generic [ref=f9e1003]: 楼名(栋号)：
+                          - generic [ref=f9e1005]: 乐源雅居
+                        - generic [ref=f9e1006]:
+                          - generic [ref=f9e1007]: 建筑面积：
+                          - generic [ref=f9e1009]: 16826.07㎡
+                        - generic [ref=f9e1010]:
+                          - generic [ref=f9e1011]: 房屋性质：
+                          - generic [ref=f9e1013]: 商品房
+                        - generic [ref=f9e1014]:
+                          - generic [ref=f9e1015]: 房屋套数：
+                          - generic [ref=f9e1017]: "147"
+                        - generic [ref=f9e1018]:
+                          - generic [ref=f9e1019]: 房屋类型：
+                          - generic [ref=f9e1021]: 高层
+                        - generic [ref=f9e1022]:
+                          - generic [ref=f9e1023]: 房屋结构：
+                          - generic [ref=f9e1025]: 框剪结构
+                        - generic [ref=f9e1026]:
+                          - generic [ref=f9e1027]: 主体建筑性质：
+                          - generic [ref=f9e1029]: 高层住宅
+                        - generic [ref=f9e1030]:
+                          - generic [ref=f9e1031]: 主体建筑结构：
+                          - generic [ref=f9e1033]: 框剪结构
+                        - generic [ref=f9e1034]:
+                          - generic [ref=f9e1035]: 地上层数：
+                          - generic [ref=f9e1037]: "31"
+                        - generic [ref=f9e1038]:
+                          - generic [ref=f9e1039]: 地下层数：
+                          - generic [ref=f9e1041]: "2"
+                        - generic [ref=f9e1042]:
+                          - generic [ref=f9e1043]: 用地面积：
+                          - generic [ref=f9e1045]: 3190.01㎡
+                        - generic [ref=f9e1046]:
+                          - generic [ref=f9e1047]: 建设价款：
+                          - generic [ref=f9e1049]: "--"
+                        - generic [ref=f9e1050]:
+                          - generic [ref=f9e1051]: 报建时间：
+                          - generic [ref=f9e1053]: 2020-01-21
+                        - generic [ref=f9e1054]:
+                          - generic [ref=f9e1055]: 开工时间：
+                          - generic [ref=f9e1057]: 2024-10-29
+                        - generic [ref=f9e1058]:
+                          - generic [ref=f9e1059]: 竣工时间：
+                          - generic [ref=f9e1061]: 2024-05-10
+                        - generic [ref=f9e1062]:
+                          - generic [ref=f9e1063]: 建设工程规划许可证：
+                          - generic [ref=f9e1065]: 建字第4403052024GG0027453（改2）号
+                        - generic [ref=f9e1066]:
+                          - generic [ref=f9e1067]: 建筑工程施工许可证：
+                          - generic [ref=f9e1069]: 2024-1441
+                        - generic [ref=f9e1070]:
+                          - generic [ref=f9e1071]: 建设用地规划许可证：
+                          - generic [ref=f9e1073]: 地字第4403052024YG0019412（改1）号
+                      - generic [ref=f9e1074]:
+                        - img [ref=f9e1076]
+                        - text: “--”解释说明：因暂无该项内容产生、无需申报、主动隐藏（资产等信息）、历史档案缺失等原因，系统未记载或显示该项信息。
+                - dialog "状态解释" [ref=f9e1100]:
+                  - generic [ref=f9e1101]:
+                    - text: 状态解释
+                    - button "Close" [ref=f9e1102] [cursor=pointer]:
+                      - generic [ref=f9e1103]: 
+                  - generic [ref=f9e1104]:
+                    - generic [ref=f9e1105]:
+                      - generic [ref=f9e1106]: 【期房待售】
+                      - text: 指房屋为期房，可以销售但尚未售出。
+                    - generic [ref=f9e1107]:
+                      - generic [ref=f9e1108]: 【已签认购书】
+                      - text: 指房屋已经签订认购书，但尚未签订正式的预售或现售合同。
+                    - generic [ref=f9e1109]:
+                      - generic [ref=f9e1110]: 【已录入合同】
+                      - text: 指房屋为期房，已录入预售合同。
+                    - generic [ref=f9e1111]:
+                      - generic [ref=f9e1112]: 【已签合同】
+                      - text: 指房屋为期房，已售出并签订预售合同。
+                    - generic [ref=f9e1113]:
+                      - generic [ref=f9e1114]: 【已备案】
+                      - text: 指签订的买卖合同已完成备案。
+                    - generic [ref=f9e1115]:
+                      - generic [ref=f9e1116]: 【首次登记】
+                      - text: 指房屋已办理首次登记，该套房屋在预售房源库中状态不再更新。
+                    - generic [ref=f9e1117]:
+                      - generic [ref=f9e1118]: 【安居房】
+                      - text: 指房屋为安居型商品房。
+                    - generic [ref=f9e1119]:
+                      - generic [ref=f9e1120]: 【自动锁定】
+                      - text: 指开发商未及时办理合同备案，导致售房系统自动锁定，暂时无法使用。
+                    - generic [ref=f9e1121]:
+                      - generic [ref=f9e1122]: 【区局锁定】
+                      - text: 指房屋处于限制状态或开发商存在违规行为，导致售房系统被区局锁定。
+                    - generic [ref=f9e1123]:
+                      - generic [ref=f9e1124]: 【市局锁定】
+                      - text: 指房屋处于限制状态或开发商存在违规行为，导致售房系统被市局锁定。
+                    - generic [ref=f9e1125]:
+                      - generic [ref=f9e1126]: 【司法查封】
+                      - text: 指房屋被司法机关查封。
+                    - generic [ref=f9e1127]:
+                      - generic [ref=f9e1128]: 【在建抵押】
+                      - text: 指房屋售出前开发商为贷款将房屋抵押给银行，根据其与银行的协议，在一定条件下可以销售。
+                    - generic [ref=f9e1129]:
+                      - generic [ref=f9e1130]: 【共有产权房】
+                      - text: 指房屋为共有产权住房。
+                    - generic [ref=f9e1131]: 特别提示：购房者发现开发企业、中介机构存在违规销售行为的，可通过房产管理投诉信箱向主管部门反映。主管部门将在查实的基础上，依法进行处理。
+            - text: 
+  - generic [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "便民服务" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 便民服务
+      - menuitem "信息公开" [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]: 信息公开
+      - menuitem "房源库" [ref=e26] [cursor=pointer]:
+        - generic [ref=e28]: 房源库
+      - menuitem "导航菜单" [ref=e29] [cursor=pointer]:
+        - generic [ref=e31]: 导航菜单
+    - generic [ref=e32]:
+      - generic [ref=e33]: 主办：
+      - generic [ref=e34]: 深圳市住房和建设局
+      - generic [ref=e35]: 版权所有：
+      - generic [ref=e36]: 深圳市住房和建设局
+      - generic [ref=e37]: 粤ICP备2023053213号
+      - generic [ref=e38] [cursor=pointer]: 粤公网安备
+      - generic [ref=e39] [cursor=pointer]: 44030402002800号
+      - generic [ref=e40]: 网站标识码：
+      - generic [ref=e41]: "4403000005"
+      - generic [ref=e43]: 技术支持电话：
+      - generic [ref=e44]: 0755-23956106

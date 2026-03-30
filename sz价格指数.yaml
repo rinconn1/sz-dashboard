@@ -1,0 +1,140 @@
+- generic [ref=e2]:
+  - generic: 
+  - generic:  
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 广东政务服务网
+      - generic [ref=e8]: 深圳市房地产信息平台
+    - generic [ref=e9]:
+      - generic [ref=e10]: 登录
+      - generic [ref=e11] [cursor=pointer]: 旧版信息系统
+    - generic [ref=e60]:
+      - tablist [ref=e64]:
+        - tab "首 页" [ref=e65]
+        - tab "信息公开 " [ref=e69]:
+          - text: 信息公开
+          - generic: 
+        - tab "一手房成交 " [selected] [ref=e70]:
+          - text: 一手房成交
+          - generic [ref=e71]: 
+      - generic:
+        - tabpanel "一手房成交 "
+  - iframe [active] [ref=e72]:
+    - generic [ref=f6e4]:
+      - generic [ref=f6e5]:
+        - generic [ref=f6e6]:
+          - generic [ref=f6e7]:
+            - text: 信息公开
+            - generic [ref=f6e8]: 
+          - generic [ref=f6e9]: 一手房成交
+        - generic [ref=f6e12] [cursor=pointer]: 刷新
+      - generic [ref=f6e15]:
+        - tablist [ref=f6e19]:
+          - tab "预售成交" [ref=f6e21]
+          - tab "现售成交" [ref=f6e22]
+          - tab "新批准预售" [ref=f6e23]
+          - tab "价格指数" [active] [selected] [ref=f6e24] [cursor=pointer]
+        - tabpanel "价格指数" [ref=f6e447]:
+          - generic [ref=f6e448]:
+            - generic [ref=f6e449]: 2026年02月，新建商品住宅成交销售价格指数为99.7，涨幅比上月+0.1个百分点。
+            - generic [ref=f6e450]: 注：销售价格指数来源于国家统计局每月18号左右发布的《70个大中城市商品住宅销售价格变动情况》。
+            - generic [ref=f6e454]:
+              - table [ref=f6e456]:
+                - rowgroup [ref=f6e460]:
+                  - row "年月 新建商品住宅销售价格环比指数" [ref=f6e461]:
+                    - columnheader "年月" [ref=f6e462]:
+                      - generic [ref=f6e463]: 年月
+                    - columnheader "新建商品住宅销售价格环比指数" [ref=f6e464]:
+                      - generic [ref=f6e465]: 新建商品住宅销售价格环比指数
+              - table [ref=f6e467]:
+                - rowgroup [ref=f6e471]:
+                  - row "2026年02月 99.7" [ref=f6e472]:
+                    - cell "2026年02月" [ref=f6e473]:
+                      - generic [ref=f6e474]: 2026年02月
+                    - cell "99.7" [ref=f6e475]:
+                      - generic [ref=f6e476]: "99.7"
+                  - row "2026年01月 99.6" [ref=f6e477]:
+                    - cell "2026年01月" [ref=f6e478]:
+                      - generic [ref=f6e479]: 2026年01月
+                    - cell "99.6" [ref=f6e480]:
+                      - generic [ref=f6e481]: "99.6"
+                  - row "2025年12月 99.5" [ref=f6e482]:
+                    - cell "2025年12月" [ref=f6e483]:
+                      - generic [ref=f6e484]: 2025年12月
+                    - cell "99.5" [ref=f6e485]:
+                      - generic [ref=f6e486]: "99.5"
+                  - row "2025年11月 99.1" [ref=f6e487]:
+                    - cell "2025年11月" [ref=f6e488]:
+                      - generic [ref=f6e489]: 2025年11月
+                    - cell "99.1" [ref=f6e490]:
+                      - generic [ref=f6e491]: "99.1"
+                  - row "2025年10月 99.3" [ref=f6e492]:
+                    - cell "2025年10月" [ref=f6e493]:
+                      - generic [ref=f6e494]: 2025年10月
+                    - cell "99.3" [ref=f6e495]:
+                      - generic [ref=f6e496]: "99.3"
+                  - row "2025年09月 99" [ref=f6e497]:
+                    - cell "2025年09月" [ref=f6e498]:
+                      - generic [ref=f6e499]: 2025年09月
+                    - cell "99" [ref=f6e500]:
+                      - generic [ref=f6e501]: "99"
+                  - row "2025年08月 99.6" [ref=f6e502]:
+                    - cell "2025年08月" [ref=f6e503]:
+                      - generic [ref=f6e504]: 2025年08月
+                    - cell "99.6" [ref=f6e505]:
+                      - generic [ref=f6e506]: "99.6"
+                  - row "2025年07月 99.4" [ref=f6e507]:
+                    - cell "2025年07月" [ref=f6e508]:
+                      - generic [ref=f6e509]: 2025年07月
+                    - cell "99.4" [ref=f6e510]:
+                      - generic [ref=f6e511]: "99.4"
+                  - row "2025年06月 99.4" [ref=f6e512]:
+                    - cell "2025年06月" [ref=f6e513]:
+                      - generic [ref=f6e514]: 2025年06月
+                    - cell "99.4" [ref=f6e515]:
+                      - generic [ref=f6e516]: "99.4"
+                  - row "2025年05月 99.6" [ref=f6e517]:
+                    - cell "2025年05月" [ref=f6e518]:
+                      - generic [ref=f6e519]: 2025年05月
+                    - cell "99.6" [ref=f6e520]:
+                      - generic [ref=f6e521]: "99.6"
+                  - row "2025年04月 99.9" [ref=f6e522]:
+                    - cell "2025年04月" [ref=f6e523]:
+                      - generic [ref=f6e524]: 2025年04月
+                    - cell "99.9" [ref=f6e525]:
+                      - generic [ref=f6e526]: "99.9"
+                  - row "2025年03月 100.1" [ref=f6e527]:
+                    - cell "2025年03月" [ref=f6e528]:
+                      - generic [ref=f6e529]: 2025年03月
+                    - cell "100.1" [ref=f6e530]:
+                      - generic [ref=f6e531]: "100.1"
+                  - row "2025年02月 100.4" [ref=f6e532]:
+                    - cell "2025年02月" [ref=f6e533]:
+                      - generic [ref=f6e534]: 2025年02月
+                    - cell "100.4" [ref=f6e535]:
+                      - generic [ref=f6e536]: "100.4"
+  - generic [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "便民服务" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 便民服务
+      - menuitem "信息公开" [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]: 信息公开
+      - menuitem "房源库" [ref=e26] [cursor=pointer]:
+        - generic [ref=e28]: 房源库
+      - menuitem "导航菜单" [ref=e29] [cursor=pointer]:
+        - generic [ref=e31]: 导航菜单
+    - generic [ref=e32]:
+      - generic [ref=e33]: 主办：
+      - generic [ref=e34]: 深圳市住房和建设局
+      - generic [ref=e35]: 版权所有：
+      - generic [ref=e36]: 深圳市住房和建设局
+      - generic [ref=e37]: 粤ICP备2023053213号
+      - generic [ref=e38] [cursor=pointer]: 粤公网安备
+      - generic [ref=e39] [cursor=pointer]: 44030402002800号
+      - generic [ref=e40]: 网站标识码：
+      - generic [ref=e41]: "4403000005"
+      - generic [ref=e43]: 技术支持电话：
+      - generic [ref=e44]: 0755-23956106

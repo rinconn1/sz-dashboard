@@ -1,0 +1,31 @@
+{
+  "source": "中指研究院/中指云 (cih-index.com)",
+  "newHouse": [
+    {"year": "2025", "month": "03", "avg_price": 52705, "mom": 0.10, "yoy": -0.39},
+    {"year": "2025", "month": "04", "avg_price": 52704, "mom": 0.00, "yoy": -0.91},
+    {"year": "2025", "month": "05", "avg_price": 52658, "mom": -0.09, "yoy": -0.90},
+    {"year": "2025", "month": "06", "avg_price": 52666, "mom": 0.01, "yoy": -0.84},
+    {"year": "2025", "month": "07", "avg_price": 52556, "mom": -0.21, "yoy": -1.37},
+    {"year": "2025", "month": "08", "avg_price": 52508, "mom": -0.09, "yoy": -1.08},
+    {"year": "2025", "month": "09", "avg_price": 52330, "mom": -0.34, "yoy": -0.75},
+    {"year": "2025", "month": "10", "avg_price": 52250, "mom": -0.15, "yoy": -0.96},
+    {"year": "2025", "month": "11", "avg_price": 52338, "mom": 0.17, "yoy": -0.66},
+    {"year": "2025", "month": "12", "avg_price": 52894, "mom": 1.06, "yoy": 0.51},
+    {"year": "2026", "month": "01", "avg_price": 53047, "mom": 0.29, "yoy": 0.72},
+    {"year": "2026", "month": "02", "avg_price": 52990, "mom": -0.11, "yoy": 0.64}
+  ],
+  "secondHand": [
+    {"year": "2025", "month": "03", "avg_price": 67587, "mom": -0.13, "yoy": -3.30},
+    {"year": "2025", "month": "04", "avg_price": 67445, "mom": -0.21, "yoy": -2.88},
+    {"year": "2025", "month": "05", "avg_price": 67254, "mom": -0.28, "yoy": -3.01},
+    {"year": "2025", "month": "06", "avg_price": 66907, "mom": -0.52, "yoy": -3.15},
+    {"year": "2025", "month": "07", "avg_price": 66541, "mom": -0.55, "yoy": -3.02},
+    {"year": "2025", "month": "08", "avg_price": 66217, "mom": -0.49, "yoy": -2.90},
+    {"year": "2025", "month": "09", "avg_price": 65888, "mom": -0.50, "yoy": -2.56},
+    {"year": "2025", "month": "10", "avg_price": 65470, "mom": -0.63, "yoy": -3.13},
+    {"year": "2025", "month": "11", "avg_price": 64946, "mom": -0.80, "yoy": -4.10},
+    {"year": "2025", "month": "12", "avg_price": 64314, "mom": -0.97, "yoy": -5.09},
+    {"year": "2026", "month": "01", "avg_price": 63692, "mom": -0.97, "yoy": -6.00},
+    {"year": "2026", "month": "02", "avg_price": 63578, "mom": -0.18, "yoy": -6.05}
+  ]
+}

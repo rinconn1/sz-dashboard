@@ -1,0 +1,251 @@
+- generic [ref=e2]:
+  - generic: 
+  - generic:  
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 广东政务服务网
+      - generic [ref=e8]: 深圳市房地产信息平台
+    - generic [ref=e9]:
+      - generic [ref=e10]: 登录
+      - generic [ref=e11] [cursor=pointer]: 旧版信息系统
+    - generic [ref=e60]:
+      - tablist [ref=e64]:
+        - tab "首 页" [ref=e65]
+        - tab "信息公开 " [ref=e69]:
+          - text: 信息公开
+          - generic: 
+        - tab "一手房成交 " [selected] [ref=e70]:
+          - text: 一手房成交
+          - generic [ref=e71]: 
+      - generic:
+        - tabpanel "一手房成交 "
+  - iframe [ref=e72]:
+    - generic [ref=f6e4]:
+      - generic [ref=f6e5]:
+        - generic [ref=f6e6]:
+          - generic [ref=f6e7]:
+            - text: 信息公开
+            - generic [ref=f6e8]: 
+          - generic [ref=f6e9]: 一手房成交
+        - generic [ref=f6e12] [cursor=pointer]: 刷新
+      - generic [ref=f6e15]:
+        - tablist [ref=f6e19]:
+          - tab "预售成交" [selected] [ref=f6e21]
+          - tab "现售成交" [ref=f6e22]
+          - tab "新批准预售" [ref=f6e23]
+          - tab "价格指数" [ref=f6e24]
+        - tabpanel "预售成交" [ref=f6e26]:
+          - generic [ref=f6e27]:
+            - generic [ref=f6e28]:
+              - radio "当日网签信息" [checked] [ref=f6e29] [cursor=pointer]:
+                - radio [checked] [ref=f6e32]
+                - generic [ref=f6e33]: 当日网签信息
+              - radio "上月网签信息" [ref=f6e34] [cursor=pointer]:
+                - radio [ref=f6e37]
+                - generic [ref=f6e38]: 上月网签信息
+            - generic [ref=f6e39]:
+              - generic [ref=f6e42]: 2026年3月19日 全市商品住房购房合同网签套数和面积
+              - generic [ref=f6e49]:
+                - generic [ref=f6e50]:
+                  - paragraph [ref=f6e51]: 所在区：
+                  - generic [ref=f6e53] [cursor=pointer]: 全市
+                  - generic [ref=f6e55] [cursor=pointer]: 罗湖
+                  - generic [ref=f6e57] [cursor=pointer]: 福田
+                  - generic [ref=f6e59] [cursor=pointer]: 南山
+                  - generic [ref=f6e61] [cursor=pointer]: 盐田
+                  - generic [ref=f6e63] [cursor=pointer]: 宝安
+                  - generic [ref=f6e65] [cursor=pointer]: 龙岗
+                  - generic [ref=f6e67] [cursor=pointer]: 坪山
+                  - generic [ref=f6e69] [cursor=pointer]: 龙华
+                  - generic [ref=f6e71] [cursor=pointer]: 大鹏新区
+                  - generic [ref=f6e73] [cursor=pointer]: 光明
+                  - generic [ref=f6e75] [cursor=pointer]: 深汕
+                - generic [ref=f6e76]:
+                  - generic [ref=f6e77]: 2026年3月19日 （ 全市 ） 认购网签信息
+                  - generic [ref=f6e79]:
+                    - table [ref=f6e81]:
+                      - rowgroup [ref=f6e86]:
+                        - row "用途 认购网签套数 认购网签面积(m²)" [ref=f6e87]:
+                          - columnheader "用途" [ref=f6e88]:
+                            - generic [ref=f6e89]: 用途
+                          - columnheader "认购网签套数" [ref=f6e90]:
+                            - generic [ref=f6e91]: 认购网签套数
+                          - columnheader "认购网签面积(m²)" [ref=f6e92]:
+                            - generic [ref=f6e93]: 认购网签面积(m²)
+                    - table [ref=f6e95]:
+                      - rowgroup [ref=f6e100]:
+                        - row "商业 0 0" [ref=f6e101]:
+                          - cell "商业" [ref=f6e102]:
+                            - generic [ref=f6e103]: 商业
+                          - cell "0" [ref=f6e104]:
+                            - generic [ref=f6e105]: "0"
+                          - cell "0" [ref=f6e106]:
+                            - generic [ref=f6e107]: "0"
+                        - row "住宅 73 7172.60" [ref=f6e108]:
+                          - cell "住宅" [ref=f6e109]:
+                            - generic [ref=f6e110]: 住宅
+                          - cell "73" [ref=f6e111]:
+                            - generic [ref=f6e112]: "73"
+                          - cell "7172.60" [ref=f6e113]:
+                            - generic [ref=f6e114]: "7172.60"
+                        - row "办公 2 145.69" [ref=f6e115]:
+                          - cell "办公" [ref=f6e116]:
+                            - generic [ref=f6e117]: 办公
+                          - cell "2" [ref=f6e118]:
+                            - generic [ref=f6e119]: "2"
+                          - cell "145.69" [ref=f6e120]:
+                            - generic [ref=f6e121]: "145.69"
+                        - row "其他 0 0" [ref=f6e122]:
+                          - cell "其他" [ref=f6e123]:
+                            - generic [ref=f6e124]: 其他
+                          - cell "0" [ref=f6e125]:
+                            - generic [ref=f6e126]: "0"
+                          - cell "0" [ref=f6e127]:
+                            - generic [ref=f6e128]: "0"
+                        - row "小计 75 7318.29" [ref=f6e129]:
+                          - cell "小计" [ref=f6e130]:
+                            - generic [ref=f6e131]: 小计
+                          - cell "75" [ref=f6e132]:
+                            - generic [ref=f6e133]: "75"
+                          - cell "7318.29" [ref=f6e134]:
+                            - generic [ref=f6e135]: "7318.29"
+                - generic [ref=f6e136]:
+                  - generic [ref=f6e137]: 2026年3月19日 （ 全市 ） 商品房购房合同网签信息
+                  - generic [ref=f6e139]:
+                    - table [ref=f6e141]:
+                      - rowgroup [ref=f6e148]:
+                        - row "用途 购房合同网签套数 购房合同网签面积(m²) 可售套数 可售面积(m²)" [ref=f6e149]:
+                          - columnheader "用途" [ref=f6e150]:
+                            - generic [ref=f6e151]: 用途
+                          - columnheader "购房合同网签套数" [ref=f6e152]:
+                            - generic [ref=f6e153]: 购房合同网签套数
+                          - columnheader "购房合同网签面积(m²)" [ref=f6e154]:
+                            - generic [ref=f6e155]: 购房合同网签面积(m²)
+                          - columnheader "可售套数" [ref=f6e156]:
+                            - generic [ref=f6e157]: 可售套数
+                          - columnheader "可售面积(m²)" [ref=f6e158]:
+                            - generic [ref=f6e159]: 可售面积(m²)
+                    - table [ref=f6e161]:
+                      - rowgroup [ref=f6e168]:
+                        - row "商业 0 0 9297 663638.47" [ref=f6e169]:
+                          - cell "商业" [ref=f6e170]:
+                            - generic [ref=f6e171]: 商业
+                          - cell "0" [ref=f6e172]:
+                            - generic [ref=f6e173]: "0"
+                          - cell "0" [ref=f6e174]:
+                            - generic [ref=f6e175]: "0"
+                          - cell "9297" [ref=f6e176]:
+                            - generic [ref=f6e177]: "9297"
+                          - cell "663638.47" [ref=f6e178]:
+                            - generic [ref=f6e179]: "663638.47"
+                        - row "住宅 49 5111.93 28325 3052803.22" [ref=f6e180]:
+                          - cell "住宅" [ref=f6e181]:
+                            - generic [ref=f6e182]: 住宅
+                          - cell "49" [ref=f6e183]:
+                            - generic [ref=f6e184]: "49"
+                          - cell "5111.93" [ref=f6e185]:
+                            - generic [ref=f6e186]: "5111.93"
+                          - cell "28325" [ref=f6e187]:
+                            - generic [ref=f6e188]: "28325"
+                          - cell "3052803.22" [ref=f6e189]:
+                            - generic [ref=f6e190]: "3052803.22"
+                        - row "办公 2 97.50 2987 503321.62" [ref=f6e191]:
+                          - cell "办公" [ref=f6e192]:
+                            - generic [ref=f6e193]: 办公
+                          - cell "2" [ref=f6e194]:
+                            - generic [ref=f6e195]: "2"
+                          - cell "97.50" [ref=f6e196]:
+                            - generic [ref=f6e197]: "97.50"
+                          - cell "2987" [ref=f6e198]:
+                            - generic [ref=f6e199]: "2987"
+                          - cell "503321.62" [ref=f6e200]:
+                            - generic [ref=f6e201]: "503321.62"
+                        - row "其他 1 1966.73 3965 1334680.06" [ref=f6e202]:
+                          - cell "其他" [ref=f6e203]:
+                            - generic [ref=f6e204]: 其他
+                          - cell "1" [ref=f6e205]:
+                            - generic [ref=f6e206]: "1"
+                          - cell "1966.73" [ref=f6e207]:
+                            - generic [ref=f6e208]: "1966.73"
+                          - cell "3965" [ref=f6e209]:
+                            - generic [ref=f6e210]: "3965"
+                          - cell "1334680.06" [ref=f6e211]:
+                            - generic [ref=f6e212]: "1334680.06"
+                        - row "小计 52 7176.16 44574 5554443.37" [ref=f6e213]:
+                          - cell "小计" [ref=f6e214]:
+                            - generic [ref=f6e215]: 小计
+                          - cell "52" [ref=f6e216]:
+                            - generic [ref=f6e217]: "52"
+                          - cell "7176.16" [ref=f6e218]:
+                            - generic [ref=f6e219]: "7176.16"
+                          - cell "44574" [ref=f6e220]:
+                            - generic [ref=f6e221]: "44574"
+                          - cell "5554443.37" [ref=f6e222]:
+                            - generic [ref=f6e223]: "5554443.37"
+                - generic [ref=f6e224]:
+                  - generic [ref=f6e225]: 2026年3月19日 （ 全市 ） 商品住房按面积统计购房合同网签信息
+                  - generic [ref=f6e227]:
+                    - table [ref=f6e229]:
+                      - rowgroup [ref=f6e234]:
+                        - row "面积区间 购房合同网签套数 购房合同网签面积(m²)" [ref=f6e235]:
+                          - columnheader "面积区间" [ref=f6e236]:
+                            - generic [ref=f6e237]: 面积区间
+                          - columnheader "购房合同网签套数" [ref=f6e238]:
+                            - generic [ref=f6e239]: 购房合同网签套数
+                          - columnheader "购房合同网签面积(m²)" [ref=f6e240]:
+                            - generic [ref=f6e241]: 购房合同网签面积(m²)
+                    - table [ref=f6e243]:
+                      - rowgroup [ref=f6e248]:
+                        - row "90平方米以下 20 1662.05" [ref=f6e249]:
+                          - cell "90平方米以下" [ref=f6e250]:
+                            - generic [ref=f6e251]: 90平方米以下
+                          - cell "20" [ref=f6e252]:
+                            - generic [ref=f6e253]: "20"
+                          - cell "1662.05" [ref=f6e254]:
+                            - generic [ref=f6e255]: "1662.05"
+                        - row "90~144平方米 26 2833.37" [ref=f6e256]:
+                          - cell "90~144平方米" [ref=f6e257]:
+                            - generic [ref=f6e258]: 90~144平方米
+                          - cell "26" [ref=f6e259]:
+                            - generic [ref=f6e260]: "26"
+                          - cell "2833.37" [ref=f6e261]:
+                            - generic [ref=f6e262]: "2833.37"
+                        - row "144平方米以上 3 616.51" [ref=f6e263]:
+                          - cell "144平方米以上" [ref=f6e264]:
+                            - generic [ref=f6e265]: 144平方米以上
+                          - cell "3" [ref=f6e266]:
+                            - generic [ref=f6e267]: "3"
+                          - cell "616.51" [ref=f6e268]:
+                            - generic [ref=f6e269]: "616.51"
+                        - row "小计 49 5111.93" [ref=f6e270]:
+                          - cell "小计" [ref=f6e271]:
+                            - generic [ref=f6e272]: 小计
+                          - cell "49" [ref=f6e273]:
+                            - generic [ref=f6e274]: "49"
+                          - cell "5111.93" [ref=f6e275]:
+                            - generic [ref=f6e276]: "5111.93"
+  - generic [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "便民服务" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 便民服务
+      - menuitem "信息公开" [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]: 信息公开
+      - menuitem "房源库" [ref=e26] [cursor=pointer]:
+        - generic [ref=e28]: 房源库
+      - menuitem "导航菜单" [ref=e29] [cursor=pointer]:
+        - generic [ref=e31]: 导航菜单
+    - generic [ref=e32]:
+      - generic [ref=e33]: 主办：
+      - generic [ref=e34]: 深圳市住房和建设局
+      - generic [ref=e35]: 版权所有：
+      - generic [ref=e36]: 深圳市住房和建设局
+      - generic [ref=e37]: 粤ICP备2023053213号
+      - generic [ref=e38] [cursor=pointer]: 粤公网安备
+      - generic [ref=e39] [cursor=pointer]: 44030402002800号
+      - generic [ref=e40]: 网站标识码：
+      - generic [ref=e41]: "4403000005"
+      - generic [ref=e43]: 技术支持电话：
+      - generic [ref=e44]: 0755-23956106

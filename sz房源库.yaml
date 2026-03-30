@@ -1,0 +1,63 @@
+- generic [ref=e2]:
+  - generic: 
+  - generic:  
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 广东政务服务网
+      - generic [ref=e8]: 深圳市房地产信息平台
+    - generic [ref=e9]:
+      - generic [ref=e10]: 登录
+      - generic [ref=e11] [cursor=pointer]: 旧版信息系统
+    - generic [ref=e60]:
+      - tablist [ref=e64]:
+        - tab "首 页" [ref=e65]
+        - tab "房源库 " [selected] [ref=e76]:
+          - text: 房源库
+          - generic [ref=e67]: 
+        - tab "一手房成交 " [ref=e70]:
+          - text: 一手房成交
+          - generic: 
+        - tab "二手房成交 " [ref=e73]:
+          - text: 二手房成交
+          - generic: 
+      - generic:
+        - tabpanel "房源库 "
+  - iframe [ref=e68]:
+    - generic [ref=f5e4]:
+      - link "一手房预售房源" [ref=f5e5] [cursor=pointer]:
+        - /url: "javascript:"
+        - generic [ref=f5e6]: 一手房预售房源
+      - link "一手房现售房源" [ref=f5e7] [cursor=pointer]:
+        - /url: "javascript:"
+        - generic [ref=f5e8]: 一手房现售房源
+      - link "二手房源" [ref=f5e9] [cursor=pointer]:
+        - /url: "javascript:"
+        - generic [ref=f5e10]: 二手房源
+      - link "稳租金商品房源" [ref=f5e11] [cursor=pointer]:
+        - /url: "javascript:"
+        - generic [ref=f5e12]: 稳租金商品房源
+  - generic [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "便民服务" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 便民服务
+      - menuitem "信息公开" [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]: 信息公开
+      - menuitem "房源库" [active] [ref=e26] [cursor=pointer]:
+        - generic [ref=e28]: 房源库
+      - menuitem "导航菜单" [ref=e29] [cursor=pointer]:
+        - generic [ref=e31]: 导航菜单
+    - generic [ref=e32]:
+      - generic [ref=e33]: 主办：
+      - generic [ref=e34]: 深圳市住房和建设局
+      - generic [ref=e35]: 版权所有：
+      - generic [ref=e36]: 深圳市住房和建设局
+      - generic [ref=e37]: 粤ICP备2023053213号
+      - generic [ref=e38] [cursor=pointer]: 粤公网安备
+      - generic [ref=e39] [cursor=pointer]: 44030402002800号
+      - generic [ref=e40]: 网站标识码：
+      - generic [ref=e41]: "4403000005"
+      - generic [ref=e43]: 技术支持电话：
+      - generic [ref=e44]: 0755-23956106

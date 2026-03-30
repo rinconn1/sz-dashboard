@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳楼市数据仪表盘</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0"></script>
+    <style>
+        :root {
+            --bg-primary: #0f1923;
+            --bg-card: #1a2733;
+            --bg-card-hover: #1f2f3d;
+            --bg-header: #0d1520;
+            --text-primary: #e8edf2;
+            --text-secondary: #8899aa;
+            --text-dim: #556677;
+            --accent-blue: #4facfe;
+            --accent-green: #43e97b;
+            --accent-orange: #f6d365;
+            --accent-red: #f5576c;
+            --accent-purple: #a18cd1;
+            --accent-cyan: #38f9d7;
+            --positive: #43e97b;
+            --negative: #f5576c;
+            --gap: 16px;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .dashboard-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: var(--gap);
+        }
+
+        /* Header */
+        .dashboard-header {
+            background: linear-gradient(135deg, #0d1520 0%, #1a2733 100%);
+            border: 1px solid rgba(79,172,254,0.15);
+            border-radius: var(--radius);
+            padding: 20px 28px;
+            margin-bottom: var(--gap);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .header-left h1 {
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header-left .subtitle {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        .header-right {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .update-btn {
+            background: linear-gradient(135deg, var(--accent-blue), #00f2fe);
+            color: #0f1923;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .update-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(79,172,254,0.4); }
+        .data-source {
+            font-size: 11px;
+            color: var(--text-dim);
+            background: rgba(255,255,255,0.05);
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 24px 0 12px;
+            padding-left: 12px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        /* KPI Cards */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--gap);
+            margin-bottom: var(--gap);
+        }
+        .kpi-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        .kpi-card.blue::before { background: linear-gradient(90deg, var(--accent-blue), #00f2fe); }
+        .kpi-card.green::before { background: linear-gradient(90deg, var(--accent-green), #38f9d7); }
+        .kpi-card.orange::before { background: linear-gradient(90deg, var(--accent-orange), #fda085); }
+        .kpi-card.red::before { background: linear-gradient(90deg, var(--accent-red), #ff9a9e); }
+        .kpi-card.purple::before { background: linear-gradient(90deg, var(--accent-purple), #fbc2eb); }
+        .kpi-card:hover { background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: var(--shadow); }
+        .kpi-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; letter-spacing: 0.5px; }
+        .kpi-value { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+        .kpi-value.blue { color: var(--accent-blue); }
+        .kpi-value.green { color: var(--accent-green); }
+        .kpi-value.orange { color: var(--accent-orange); }
+        .kpi-value.red { color: var(--accent-red); }
+        .kpi-value.purple { color: var(--accent-purple); }
+        .kpi-unit { font-size: 14px; font-weight: 400; color: var(--text-secondary); margin-left: 4px; }
+        .kpi-sub { font-size: 12px; color: var(--text-dim); }
+        .kpi-sub .up { color: var(--positive); }
+        .kpi-sub .down { color: var(--negative); }
+
+        /* Chart Grid */
+        .chart-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: var(--gap);
+            margin-bottom: var(--gap);
+        }
+        .chart-row.full { grid-template-columns: 1fr; }
+        .chart-container {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .chart-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .chart-badge {
+            font-size: 11px;
+            color: var(--text-dim);
+            background: rgba(255,255,255,0.05);
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+        .chart-canvas-wrap { position: relative; height: 320px; }
+        .chart-canvas-wrap canvas { width: 100% !important; height: 100% !important; }
+
+        /* Deho Table */
+        .table-section {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            border: 1px solid rgba(255,255,255,0.04);
+            overflow-x: auto;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .data-table thead th {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 12px;
+            white-space: nowrap;
+            user-select: none;
+            cursor: pointer;
+        }
+        .data-table thead th:hover { color: var(--accent-blue); }
+        .data-table tbody td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .data-table tbody tr:hover { background: rgba(79,172,254,0.05); }
+        .data-table tbody tr:last-child td { border-bottom: none; }
+        .data-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+        .deho-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.06);
+            min-width: 80px;
+            display: inline-block;
+        }
+        .deho-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .tag-danger { background: rgba(245,87,108,0.15); color: var(--accent-red); }
+        .tag-warn { background: rgba(246,211,101,0.15); color: var(--accent-orange); }
+        .tag-ok { background: rgba(67,233,123,0.15); color: var(--accent-green); }
+
+        /* Summary Cards */
+        .summary-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--gap);
+            margin-bottom: var(--gap);
+        }
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 18px 22px;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .summary-card .sc-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .summary-card .sc-text {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .summary-card .sc-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .dashboard-footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .kpi-row { grid-template-columns: repeat(2, 1fr); }
+            .chart-row { grid-template-columns: 1fr; }
+            .dashboard-header { flex-direction: column; align-items: flex-start; }
+        }
+        @media print {
+            body { background: white; color: black; }
+            .kpi-card, .chart-container, .table-section { border: 1px solid #ddd; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard-container">
+
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <h1>深圳楼市实时数据仪表盘</h1>
+            <div class="subtitle">数据来源：深圳市房地产信息平台 (fdc.zjj.sz.gov.cn) | 采集时间：<span id="updateTime"></span> | 网签/认购数据日期：<span id="dataDate" style="color:#ff6b35;font-weight:600;"></span> | 库存/去化数据截止：<span id="kcDate" style="color:#4ecdc4;font-weight:600;"></span></div>
+        </div>
+        <div class="header-right">
+            <span class="data-source">一手房预售 + 二手房成交</span>
+        </div>
+    </header>
+
+    <!-- KPI Cards -->
+    <div class="section-title">核心指标</div>
+    <div class="kpi-row">
+        <div class="kpi-card blue">
+            <div class="kpi-label">今日住宅认购</div>
+            <div class="kpi-value blue"><span id="kpi-rg">0</span><span class="kpi-unit">套</span></div>
+            <div class="kpi-sub">面积 <span id="kpi-rg-mj">0</span> 万平</div>
+        </div>
+        <div class="kpi-card green">
+            <div class="kpi-label">今日住宅网签 (预售+现售)</div>
+            <div class="kpi-value green"><span id="kpi-wq">0</span><span class="kpi-unit">套</span></div>
+            <div class="kpi-sub">预售<span id="kpi-wq-xs">0</span> + 现售<span id="kpi-wq-ys">0</span> | 面积 <span id="kpi-wq-mj">0</span> 万m²</div>
+        </div>
+        <div class="kpi-card orange">
+            <div class="kpi-label">今日二手住宅成交</div>
+            <div class="kpi-value orange"><span id="kpi-esf">0</span><span class="kpi-unit">套</span></div>
+            <div class="kpi-sub">面积 <span id="kpi-esf-mj">0</span> 万平</div>
+        </div>
+        <div class="kpi-card red">
+            <div class="kpi-label">住宅库存(期房待售)</div>
+            <div class="kpi-value red"><span id="kpi-kc">0</span><span class="kpi-unit">套</span></div>
+            <div class="kpi-sub">面积 <span id="kpi-kc-mj">0</span> 万平</div>
+        </div>
+        <div class="kpi-card purple">
+            <div class="kpi-label">去化周期</div>
+            <div class="kpi-value purple"><span id="kpi-dh">0</span><span class="kpi-unit">月</span></div>
+            <div class="kpi-sub">近12月均成交 <span id="kpi-dh-cj">0</span> 套</div>
+        </div>
+    </div>
+
+    <!-- 市场汇总 -->
+    <div class="section-title">市场概况</div>
+    <div class="summary-row">
+        <div class="summary-card">
+            <div class="sc-title">一手房预售成交 (上月)</div>
+            <div class="sc-text" id="ysf-summary"></div>
+        </div>
+        <div class="summary-card">
+            <div class="sc-title">二手商品房成交 (上月)</div>
+            <div class="sc-text" id="esf-summary"></div>
+        </div>
+        <div class="summary-card">
+            <div class="sc-title">一手房现售成交 (上月)</div>
+            <div class="sc-text" id="xsf-summary"></div>
+        </div>
+    </div>
+
+    <!-- Charts Row 1 -->
+    <div class="section-title">分区成交数据</div>
+    <div class="chart-row">
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">一手房分区认购 vs 网签 (住宅, 当日)</span>
+                <span class="chart-badge" id="chart1-date"></span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-rg-wq"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">二手房分区成交 (住宅, 当日)</span>
+                <span class="chart-badge" id="chart2-date"></span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-esf"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Charts Row 2 -->
+    <div class="section-title">库存与去化</div>
+    <div class="chart-row">
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">各区住宅库存套数</span>
+                <span class="chart-badge">截至2026年2月</span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-inventory"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">各区去化周期 (月)</span>
+                <span class="chart-badge">库存/上月成交套数</span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-deho"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Charts Row 3 -->
+    <div class="section-title">新批准预售</div>
+    <div class="chart-row full">
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">2026年3月 各区新批准预售套数</span>
+                <span class="chart-badge">预售 + 现售</span>
+            </div>
+            <div class="chart-canvas-wrap" style="height:280px"><canvas id="chart-xss"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Charts Row 4 -->
+    <div class="section-title">价格走势</div>
+    <div class="chart-row">
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">新房价格指数 (环比上月)</span>
+                <span class="chart-badge">100=持平</span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-price-new"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">二手房价格指数 (环比上月)</span>
+                <span class="chart-badge">100=持平</span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-price-esf"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Charts Row 5: 成交均价 -->
+    <div class="section-title">成交均价走势</div>
+    <div class="chart-row">
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">新房成交均价 (元/m²)</span>
+                <span class="chart-badge" id="avg-src-badge">来源: 中指研究院</span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-avg-new"></canvas></div>
+        </div>
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">二手房成交均价 (元/m²)</span>
+                <span class="chart-badge">来源: 中指研究院</span>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-avg-esf"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Charts Row 6: 月度对比 -->
+    <div class="section-title">月度对比</div>
+    <div class="chart-row full">
+        <div class="chart-container">
+            <div class="chart-header">
+                <span class="chart-title">一手 vs 二手住宅月度成交套数对比 (上月)</span>
+            </div>
+            <div class="chart-canvas-wrap" style="height:300px"><canvas id="chart-month-compare"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Deho Table -->
+    <div class="section-title">各区库存去化明细</div>
+    <div class="table-section">
+        <table class="data-table" id="deho-table">
+            <thead>
+                <tr>
+                    <th>区域</th>
+                    <th class="num">库存套数</th>
+                    <th class="num">库存面积(万平)</th>
+                    <th class="num">上月成交套数</th>
+                    <th class="num">上月认购套数</th>
+                    <th class="num">去化周期(月)</th>
+                    <th>压力等级</th>
+                    <th>库存占比</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="dashboard-footer">
+        数据来源：深圳市住房和建设局 · 深圳市房地产信息平台 | 仅供参考，以官方发布为准
+    </div>
+</div>
+
+<script>
+// ==================== DATA ====================
+const DATA = {
+  "dataDate": "2026年03月29日",
+  "kpi": {
+    "rg_ts": 40,
+    "rg_mj": 3827.65,
+    "wq_ts": 58,
+    "wq_mj": 8520.21,
+    "wq_xs_ts": 6,
+    "wq_ys_ts": 52,
+    "esf_ts": 44,
+    "esf_mj": 4743.25,
+    "kc_ts": 29098,
+    "kc_mj": 3120376.75,
+    "last_deal": 751,
+    "dataDate": "2026年03月29日",
+    "wqDate": "2026年03月29日",
+    "esfDate": "2026年3月29日",
+    "kcDate": "2026年2月",
+    "dh_month": 11.2,
+    "avg12m": 2593.6,
+    "history_months": 12
+  },
+  "rg_district": [
+    {
+      "name": "罗湖",
+      "value": 0
+    },
+    {
+      "name": "福田",
+      "value": 0
+    },
+    {
+      "name": "南山",
+      "value": 8
+    },
+    {
+      "name": "盐田",
+      "value": 0
+    },
+    {
+      "name": "宝安",
+      "value": 12
+    },
+    {
+      "name": "龙岗",
+      "value": 11
+    },
+    {
+      "name": "龙华",
+      "value": 5
+    },
+    {
+      "name": "光明",
+      "value": 2
+    },
+    {
+      "name": "坪山",
+      "value": 2
+    },
+    {
+      "name": "大鹏",
+      "value": 0
+    },
+    {
+      "name": "深汕",
+      "value": 0
+    }
+  ],
+  "wq_district": [
+    {
+      "name": "宝安",
+      "value": 10
+    },
+    {
+      "name": "龙华",
+      "value": 7
+    },
+    {
+      "name": "龙岗",
+      "value": 16
+    },
+    {
+      "name": "福田",
+      "value": 1
+    },
+    {
+      "name": "罗湖",
+      "value": 0
+    },
+    {
+      "name": "南山",
+      "value": 15
+    },
+    {
+      "name": "盐田",
+      "value": 0
+    },
+    {
+      "name": "坪山",
+      "value": 3
+    },
+    {
+      "name": "光明",
+      "value": 6
+    },
+    {
+      "name": "大鹏",
+      "value": 0
+    },
+    {
+      "name": "深汕",
+      "value": 0
+    }
+  ],
+  "deho": [
+    {
+      "zone": "全市",
+      "inv": 29098,
+      "area": 312.04,
+      "deal": 751,
+      "rg": 0,
+      "cycle": 11.2,
+      "avg12m": 2593.6,
+      "history_months": 12
+    },
+    {
+      "zone": "罗湖",
+      "inv": 693,
+      "area": 7.42,
+      "deal": 14,
+      "rg": 0,
+      "cycle": 14.3,
+      "avg12m": 48.3
+    },
+    {
+      "zone": "福田",
+      "inv": 808,
+      "area": 11.54,
+      "deal": 22,
+      "rg": 0,
+      "cycle": 10.6,
+      "avg12m": 76.0
+    },
+    {
+      "zone": "南山",
+      "inv": 835,
+      "area": 10.99,
+      "deal": 75,
+      "rg": 0,
+      "cycle": 3.2,
+      "avg12m": 259.0
+    },
+    {
+      "zone": "盐田",
+      "inv": 271,
+      "area": 3.02,
+      "deal": 21,
+      "rg": 0,
+      "cycle": 3.7,
+      "avg12m": 72.5
+    },
+    {
+      "zone": "宝安",
+      "inv": 4930,
+      "area": 55.89,
+      "deal": 156,
+      "rg": 0,
+      "cycle": 9.1,
+      "avg12m": 538.8
+    },
+    {
+      "zone": "龙岗",
+      "inv": 5594,
+      "area": 59.92,
+      "deal": 124,
+      "rg": 0,
+      "cycle": 13.1,
+      "avg12m": 428.2
+    },
+    {
+      "zone": "龙华",
+      "inv": 7063,
+      "area": 70.25,
+      "deal": 174,
+      "rg": 0,
+      "cycle": 11.8,
+      "avg12m": 600.9
+    },
+    {
+      "zone": "光明",
+      "inv": 2689,
+      "area": 27.2,
+      "deal": 115,
+      "rg": 0,
+      "cycle": 6.8,
+      "avg12m": 397.2
+    },
+    {
+      "zone": "坪山",
+      "inv": 3434,
+      "area": 31.08,
+      "deal": 50,
+      "rg": 0,
+      "cycle": 19.9,
+      "avg12m": 172.7
+    },
+    {
+      "zone": "大鹏",
+      "inv": 0,
+      "area": 0.0,
+      "deal": 0,
+      "rg": 0,
+      "cycle": -1,
+      "avg12m": 0.0
+    },
+    {
+      "zone": "深汕",
+      "inv": 2781,
+      "area": 34.73,
+      "deal": 0,
+      "rg": 0,
+      "cycle": -1,
+      "avg12m": 0.0
+    }
+  ],
+  "xss": [
+    {
+      "district": "宝安",
+      "spzfts": 392,
+      "spfts": 407
+    },
+    {
+      "district": "福田",
+      "spzfts": 0,
+      "spfts": 0
+    },
+    {
+      "district": "光明",
+      "spzfts": 0,
+      "spfts": 0
+    },
+    {
+      "district": "龙岗",
+      "spzfts": 53,
+      "spfts": 53
+    },
+    {
+      "district": "龙华",
+      "spzfts": 1140,
+      "spfts": 1150
+    },
+    {
+      "district": "罗湖",
+      "spzfts": 0,
+      "spfts": 805
+    },
+    {
+      "district": "南山",
+      "spzfts": 518,
+      "spfts": 548
+    },
+    {
+      "district": "坪山",
+      "spzfts": 349,
+      "spfts": 392
+    },
+    {
+      "district": "深汕",
+      "spzfts": 0,
+      "spfts": 0
+    },
+    {
+      "district": "盐田",
+      "spzfts": 0,
+      "spfts": 0
+    },
+    {
+      "district": "大鹏",
+      "spzfts": 0,
+      "spfts": 0
+    },
+    {
+      "district": "全市",
+      "spzfts": 2452,
+      "spfts": 3355
+    }
+  ],
+  "priceNew": [
+    {
+      "year": "2026",
+      "month": "02",
+      "idx": 99.7,
+      "chg": 0.1
+    },
+    {
+      "year": "2026",
+      "month": "01",
+      "idx": 99.6,
+      "chg": 0.1
+    },
+    {
+      "year": "2025",
+      "month": "12",
+      "idx": 99.5,
+      "chg": 0.4
+    },
+    {
+      "year": "2025",
+      "month": "11",
+      "idx": 99.1,
+      "chg": -0.2
+    },
+    {
+      "year": "2025",
+      "month": "10",
+      "idx": 99.3,
+      "chg": 0.3
+    },
+    {
+      "year": "2025",
+      "month": "09",
+      "idx": 99.0,
+      "chg": -0.6
+    },
+    {
+      "year": "2025",
+      "month": "08",
+      "idx": 99.6,
+      "chg": 0.2
+    },
+    {
+      "year": "2025",
+      "month": "07",
+      "idx": 99.4,
+      "chg": 0.0
+    },
+    {
+      "year": "2025",
+      "month": "06",
+      "idx": 99.4,
+      "chg": -0.2
+    },
+    {
+      "year": "2025",
+      "month": "05",
+      "idx": 99.6,
+      "chg": -0.3
+    },
+    {
+      "year": "2025",
+      "month": "04",
+      "idx": 99.9,
+      "chg": -0.2
+    },
+    {
+      "year": "2025",
+      "month": "03",
+      "idx": 100.1,
+      "chg": -0.3
+    },
+    {
+      "year": "2025",
+      "month": "02",
+      "idx": 100.4,
+      "chg": 0.0
+    }
+  ],
+  "priceEsf": [
+    {
+      "year": "2026",
+      "month": "02",
+      "idx": 99.6,
+      "chg": 0.2
+    },
+    {
+      "year": "2026",
+      "month": "01",
+      "idx": 99.4,
+      "chg": 0.0
+    },
+    {
+      "year": "2025",
+      "month": "12",
+      "idx": 99.4,
+      "chg": 0.4
+    },
+    {
+      "year": "2025",
+      "month": "11",
+      "idx": 99.0,
+      "chg": -0.1
+    },
+    {
+      "year": "2025",
+      "month": "10",
+      "idx": 99.1,
+      "chg": 0.1
+    },
+    {
+      "year": "2025",
+      "month": "09",
+      "idx": 99.0,
+      "chg": -0.2
+    },
+    {
+      "year": "2025",
+      "month": "08",
+      "idx": 99.2,
+      "chg": 0.1
+    },
+    {
+      "year": "2025",
+      "month": "07",
+      "idx": 99.1,
+      "chg": -0.4
+    },
+    {
+      "year": "2025",
+      "month": "06",
+      "idx": 99.5,
+      "chg": 0.0
+    },
+    {
+      "year": "2025",
+      "month": "05",
+      "idx": 99.5,
+      "chg": -0.2
+    },
+    {
+      "year": "2025",
+      "month": "04",
+      "idx": 99.7,
+      "chg": -0.6
+    },
+    {
+      "year": "2025",
+      "month": "03",
+      "idx": 100.3,
+      "chg": 0.0
+    },
+    {
+      "year": "2025",
+      "month": "02",
+      "idx": 100.3,
+      "chg": 0.0
+    }
+  ],
+  "ysfMonth": [
+    {
+      "zone": "全市",
+      "ts": 547,
+      "mj": 57052.87
+    },
+    {
+      "zone": "罗湖",
+      "ts": 12,
+      "mj": 1326.28
+    },
+    {
+      "zone": "福田",
+      "ts": 20,
+      "mj": 3959.8
+    },
+    {
+      "zone": "南山",
+      "ts": 26,
+      "mj": 3609.05
+    },
+    {
+      "zone": "盐田",
+      "ts": 15,
+      "mj": 1620.34
+    },
+    {
+      "zone": "宝安",
+      "ts": 104,
+      "mj": 9761.33
+    },
+    {
+      "zone": "龙岗",
+      "ts": 142,
+      "mj": 14172.95
+    },
+    {
+      "zone": "龙华",
+      "ts": 92,
+      "mj": 9526.44
+    },
+    {
+      "zone": "光明",
+      "ts": 37,
+      "mj": 3846.3
+    },
+    {
+      "zone": "坪山",
+      "ts": 82,
+      "mj": 7580.24
+    },
+    {
+      "zone": "大鹏",
+      "ts": 0,
+      "mj": 0
+    },
+    {
+      "zone": "深汕",
+      "ts": 0,
+      "mj": 0
+    }
+  ],
+  "esfMonth": [
+    {
+      "zone": "全市",
+      "ts": 2339
+    },
+    {
+      "zone": "罗湖",
+      "ts": 465
+    },
+    {
+      "zone": "福田",
+      "ts": 384
+    },
+    {
+      "zone": "南山",
+      "ts": 349
+    },
+    {
+      "zone": "盐田",
+      "ts": 57
+    },
+    {
+      "zone": "宝安",
+      "ts": 276
+    },
+    {
+      "zone": "龙岗",
+      "ts": 502
+    },
+    {
+      "zone": "龙华",
+      "ts": 192
+    },
+    {
+      "zone": "光明",
+      "ts": 45
+    },
+    {
+      "zone": "坪山",
+      "ts": 60
+    },
+    {
+      "zone": "大鹏",
+      "ts": 9
+    },
+    {
+      "zone": "深汕",
+      "ts": 0
+    }
+  ],
+  "summaries": {
+    "ysf": "全市预售商品房成交为12.14万平方米（1273套），同比-48.64%；其中商品住宅成交为8.87万平方米（751套），同比-47.86%",
+    "esf": "全市二手商品房成交为27.85万平方米（3025套），同比-33.56%；其中二手商品住宅成交为22.87万平方米（2339套），同比-37.98%",
+    "xsf": "全市现售商品房成交为14.26万平方米（1160套），同比-54.00%；其中商品住宅成交为5.71万平方米（547套），同比-33.35%"
+  },
+  "updateTime": "2026-03-30 21:24",
+  "refMonth": "2026-02",
+  "avgPrice": {
+    "source": "中指研究院/中指云 (cih-index.com)",
+    "newHouse": [
+      {
+        "year": "2025",
+        "month": "03",
+        "avg_price": 52705,
+        "mom": 0.1,
+        "yoy": -0.39
+      },
+      {
+        "year": "2025",
+        "month": "04",
+        "avg_price": 52704,
+        "mom": 0.0,
+        "yoy": -0.91
+      },
+      {
+        "year": "2025",
+        "month": "05",
+        "avg_price": 52658,
+        "mom": -0.09,
+        "yoy": -0.9
+      },
+      {
+        "year": "2025",
+        "month": "06",
+        "avg_price": 52666,
+        "mom": 0.01,
+        "yoy": -0.84
+      },
+      {
+        "year": "2025",
+        "month": "07",
+        "avg_price": 52556,
+        "mom": -0.21,
+        "yoy": -1.37
+      },
+      {
+        "year": "2025",
+        "month": "08",
+        "avg_price": 52508,
+        "mom": -0.09,
+        "yoy": -1.08
+      },
+      {
+        "year": "2025",
+        "month": "09",
+        "avg_price": 52330,
+        "mom": -0.34,
+        "yoy": -0.75
+      },
+      {
+        "year": "2025",
+        "month": "10",
+        "avg_price": 52250,
+        "mom": -0.15,
+        "yoy": -0.96
+      },
+      {
+        "year": "2025",
+        "month": "11",
+        "avg_price": 52338,
+        "mom": 0.17,
+        "yoy": -0.66
+      },
+      {
+        "year": "2025",
+        "month": "12",
+        "avg_price": 52894,
+        "mom": 1.06,
+        "yoy": 0.51
+      },
+      {
+        "year": "2026",
+        "month": "01",
+        "avg_price": 53047,
+        "mom": 0.29,
+        "yoy": 0.72
+      },
+      {
+        "year": "2026",
+        "month": "02",
+        "avg_price": 52990,
+        "mom": -0.11,
+        "yoy": 0.64
+      }
+    ],
+    "secondHand": [
+      {
+        "year": "2025",
+        "month": "03",
+        "avg_price": 67587,
+        "mom": -0.13,
+        "yoy": -3.3
+      },
+      {
+        "year": "2025",
+        "month": "04",
+        "avg_price": 67445,
+        "mom": -0.21,
+        "yoy": -2.88
+      },
+      {
+        "year": "2025",
+        "month": "05",
+        "avg_price": 67254,
+        "mom": -0.28,
+        "yoy": -3.01
+      },
+      {
+        "year": "2025",
+        "month": "06",
+        "avg_price": 66907,
+        "mom": -0.52,
+        "yoy": -3.15
+      },
+      {
+        "year": "2025",
+        "month": "07",
+        "avg_price": 66541,
+        "mom": -0.55,
+        "yoy": -3.02
+      },
+      {
+        "year": "2025",
+        "month": "08",
+        "avg_price": 66217,
+        "mom": -0.49,
+        "yoy": -2.9
+      },
+      {
+        "year": "2025",
+        "month": "09",
+        "avg_price": 65888,
+        "mom": -0.5,
+        "yoy": -2.56
+      },
+      {
+        "year": "2025",
+        "month": "10",
+        "avg_price": 65470,
+        "mom": -0.63,
+        "yoy": -3.13
+      },
+      {
+        "year": "2025",
+        "month": "11",
+        "avg_price": 64946,
+        "mom": -0.8,
+        "yoy": -4.1
+      },
+      {
+        "year": "2025",
+        "month": "12",
+        "avg_price": 64314,
+        "mom": -0.97,
+        "yoy": -5.09
+      },
+      {
+        "year": "2026",
+        "month": "01",
+        "avg_price": 63692,
+        "mom": -0.97,
+        "yoy": -6.0
+      },
+      {
+        "year": "2026",
+        "month": "02",
+        "avg_price": 63578,
+        "mom": -0.18,
+        "yoy": -6.05
+      }
+    ]
+  }
+};
+
+// ==================== CHART COLORS ====================
+const C = {
+    blue: '#4facfe', green: '#43e97b', orange: '#f6d365', red: '#f5576c',
+    purple: '#a18cd1', cyan: '#38f9d7', pink: '#ff9a9e', teal: '#00d2ff',
+    lime: '#a8e063', salmon: '#ff6b6b'
+};
+const PALETTE = [C.blue, C.green, C.orange, C.red, C.purple, C.cyan, C.pink, C.teal, C.lime, C.salmon, '#818cf8', '#f472b6'];
+const ZONE_ORDER = ["南山","福田","宝安","龙华","龙岗","罗湖","光明","坪山","盐田","大鹏","深汕"];
+
+// ==================== UTILS ====================
+function fmt(n, d=0) { return n == null ? '0' : Number(n).toLocaleString('zh-CN', {minimumFractionDigits:d, maximumFractionDigits:d}); }
+function pct(n, d=1) { return n == null ? '0' : Number(n).toFixed(d); }
+function wan(n) { return (n / 10000).toFixed(2); }
+
+function getZoneColor(zone, alpha=1) {
+    const idx = ZONE_ORDER.indexOf(zone);
+    const c = PALETTE[idx >= 0 ? idx : 0];
+    return alpha < 1 ? c + Math.round(alpha*255).toString(16).padStart(2,'0') : c;
+}
+
+function sortZones(data, key='zone') {
+    return [...data].sort((a,b) => {
+        const ia = ZONE_ORDER.indexOf(a[key]);
+        const ib = ZONE_ORDER.indexOf(b[key]);
+        return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+}
+
+// ==================== KPI ====================
+function renderKPIs() {
+    const k = DATA.kpi;
+    document.getElementById('updateTime').textContent = DATA.updateTime;
+    document.getElementById('dataDate').textContent = DATA.dataDate || DATA.kpi.wqDate || '';
+    document.getElementById('kcDate').textContent = DATA.refMonth ? DATA.refMonth.replace(/(\d{4})-(\d{2})/, '$1年$2月') : '';
+    document.getElementById('kpi-rg').textContent = fmt(k.rg_ts);
+    document.getElementById('kpi-rg-mj').textContent = wan(k.rg_mj);
+    document.getElementById('kpi-wq').textContent = fmt(k.wq_ts);
+    document.getElementById('kpi-wq-xs').textContent = k.wq_xs_ts || 0;
+    document.getElementById('kpi-wq-ys').textContent = k.wq_ys_ts || 0;
+    document.getElementById('kpi-wq-mj').textContent = wan(k.wq_mj);
+    document.getElementById('kpi-esf').textContent = fmt(k.esf_ts);
+    document.getElementById('kpi-esf-mj').textContent = wan(k.esf_mj);
+    document.getElementById('kpi-kc').textContent = fmt(k.kc_ts);
+    document.getElementById('kpi-kc-mj').textContent = wan(k.kc_mj);
+    document.getElementById('kpi-dh').textContent = pct(k.dh_month);
+    document.getElementById('kpi-dh-cj').textContent = fmt(k.avg12m || k.last_deal);
+
+    // Summaries
+    document.getElementById('ysf-summary').innerHTML = DATA.summaries.ysf
+        .replace(/(\d+\.?\d*)万平方米/g, '<strong style="color:var(--accent-blue)">$1万m²</strong>')
+        .replace(/（(\d+)套）/g, '（<strong style="color:var(--accent-blue)">$1</strong>套）');
+    document.getElementById('esf-summary').innerHTML = DATA.summaries.esf
+        .replace(/(\d+\.?\d*)万平方米/g, '<strong style="color:var(--accent-orange)">$1万m²</strong>')
+        .replace(/（(\d+)套）/g, '（<strong style="color:var(--accent-orange)">$1</strong>套）');
+    document.getElementById('xsf-summary').innerHTML = DATA.summaries.xsf
+        .replace(/(\d+\.?\d*)万平方米/g, '<strong style="color:var(--accent-green)">$1万m²</strong>')
+        .replace(/（(\d+)套）/g, '（<strong style="color:var(--accent-green)">$1</strong>套）');
+
+    document.getElementById('chart1-date').textContent = DATA.dataDate;
+    document.getElementById('chart2-date').textContent = DATA.dataDate;
+}
+
+// ==================== CHARTS ====================
+const charts = {};
+
+function baseChartOpts(hideX=false) {
+    return {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                backgroundColor: 'rgba(15,25,35,0.95)',
+                titleColor: '#e8edf2',
+                bodyColor: '#8899aa',
+                borderColor: 'rgba(79,172,254,0.3)',
+                borderWidth: 1,
+                cornerRadius: 8,
+                padding: 12
+            }
+        },
+        scales: {
+            x: {
+                grid: { color: 'rgba(255,255,255,0.04)' },
+                ticks: { color: '#556677', font: { size: 11 } },
+                display: !hideX
+            },
+            y: {
+                grid: { color: 'rgba(255,255,255,0.06)' },
+                ticks: { color: '#556677', font: { size: 11 } },
+                beginAtZero: true
+            }
+        }
+    };
+}
+
+// 1. 认购 vs 网签 分区对比
+function chartRgWq() {
+    const zones = ZONE_ORDER.filter(z => DATA.rg_district.find(d => d.name===z));
+    const rgData = zones.map(z => DATA.rg_district.find(d => d.name===z)?.value || 0);
+    const wqData = zones.map(z => DATA.wq_district.find(d => d.name===z)?.value || 0);
+
+    charts.rgWq = new Chart(document.getElementById('chart-rg-wq'), {
+        type: 'bar',
+        data: {
+            labels: zones,
+            datasets: [
+                { label: '认购套数', data: rgData, backgroundColor: C.blue + 'AA', borderColor: C.blue, borderWidth: 1, borderRadius: 4 },
+                { label: '网签套数', data: wqData, backgroundColor: C.green + 'AA', borderColor: C.green, borderWidth: 1, borderRadius: 4 }
+            ]
+        },
+        options: {
+            ...baseChartOpts(),
+            plugins: {
+                ...baseChartOpts().plugins,
+                legend: { display: true, position: 'top', labels: { color: '#8899aa', usePointStyle: true, padding: 16, font: { size: 11 } } }
+            }
+        }
+    });
+}
+
+// 2. 二手房分区成交 (月度数据)
+function chartEsf() {
+    const sorted = sortZones(DATA.esfMonth.filter(d => d.zone !== '全市'), 'zone');
+    const zones = sorted.map(d => d.zone);
+    const vals = sorted.map(d => d.ts);
+
+    charts.esf = new Chart(document.getElementById('chart-esf'), {
+        type: 'bar',
+        data: {
+            labels: zones,
+            datasets: [{
+                label: '月度成交套数',
+                data: vals,
+                backgroundColor: zones.map(z => getZoneColor(z, 0.7)),
+                borderColor: zones.map(z => getZoneColor(z)),
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: baseChartOpts()
+    });
+}
+
+// 3. 库存
+function chartInventory() {
+    const sorted = sortZones(DATA.deho.filter(d => d.zone !== '全市' && d.inv > 0), 'zone');
+    const zones = sorted.map(d => d.zone);
+    const vals = sorted.map(d => d.inv);
+
+    charts.inv = new Chart(document.getElementById('chart-inventory'), {
+        type: 'bar',
+        data: {
+            labels: zones,
+            datasets: [{
+                label: '库存套数',
+                data: vals,
+                backgroundColor: zones.map((z,i) => {
+                    const ratio = vals[i] / Math.max(...vals);
+                    return ratio > 0.7 ? C.red + 'AA' : ratio > 0.4 ? C.orange + 'AA' : C.green + 'AA';
+                }),
+                borderColor: zones.map((z,i) => {
+                    const ratio = vals[i] / Math.max(...vals);
+                    return ratio > 0.7 ? C.red : ratio > 0.4 ? C.orange : C.green;
+                }),
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            ...baseChartOpts(),
+            plugins: {
+                ...baseChartOpts().plugins,
+                tooltip: {
+                    ...baseChartOpts().plugins.tooltip,
+                    callbacks: {
+                        label: ctx => `库存: ${fmt(ctx.parsed.y)} 套`
+                    }
+                }
+            }
+        }
+    });
+}
+
+// 4. 去化周期
+function chartDeho() {
+    const sorted = sortZones(DATA.deho.filter(d => d.zone !== '全市' && d.cycle > 0), 'zone');
+    const zones = sorted.map(d => d.zone);
+    const vals = sorted.map(d => d.cycle);
+
+    charts.deho = new Chart(document.getElementById('chart-deho'), {
+        type: 'bar',
+        data: {
+            labels: zones,
+            datasets: [{
+                label: '去化周期(月)',
+                data: vals,
+                backgroundColor: vals.map(v => v > 48 ? C.red + 'BB' : v > 24 ? C.orange + 'BB' : C.green + 'BB'),
+                borderColor: vals.map(v => v > 48 ? C.red : v > 24 ? C.orange : C.green),
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            ...baseChartOpts(),
+            indexAxis: 'y',
+            plugins: {
+                ...baseChartOpts().plugins,
+                tooltip: {
+                    ...baseChartOpts().plugins.tooltip,
+                    callbacks: {
+                        label: ctx => `去化周期: ${pct(ctx.parsed.x)} 月`
+                    }
+                }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#556677' }, beginAtZero: true },
+                y: { grid: { display: false }, ticks: { color: '#8899aa', font: { size: 12 } } }
+            }
+        }
+    });
+}
+
+// 5. 新批准预售
+function chartXss() {
+    const sorted = sortZones(DATA.xss.filter(d => d.district !== '全市' && (d.spzfts > 0 || d.spfts > 0)), 'district');
+    const zones = sorted.map(d => d.district);
+    if (zones.length === 0) return;
+
+    charts.xss = new Chart(document.getElementById('chart-xss'), {
+        type: 'bar',
+        data: {
+            labels: zones,
+            datasets: [
+                { label: '新批准预售套数', data: sorted.map(d => d.spzfts), backgroundColor: C.blue + 'AA', borderColor: C.blue, borderWidth: 1, borderRadius: 4 },
+                { label: '预售+现售套数', data: sorted.map(d => d.spfts), backgroundColor: C.cyan + 'AA', borderColor: C.cyan, borderWidth: 1, borderRadius: 4 }
+            ]
+        },
+        options: {
+            ...baseChartOpts(),
+            plugins: {
+                ...baseChartOpts().plugins,
+                legend: { display: true, position: 'top', labels: { color: '#8899aa', usePointStyle: true, padding: 16, font: { size: 11 } } }
+            }
+        }
+    });
+}
+
+// 6. 价格指数
+function chartPrice(canvasId, priceData, label, color) {
+    const reversed = [...priceData].reverse();
+    const labels = reversed.map(d => `${d.year}-${d.month}`);
+    const idx = reversed.map(d => d.idx);
+    const chg = reversed.map(d => d.chg);
+
+    charts[canvasId] = new Chart(document.getElementById(canvasId), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: '价格指数',
+                    data: idx,
+                    borderColor: color,
+                    backgroundColor: color + '20',
+                    fill: true,
+                    tension: 0.3,
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: color,
+                    yAxisID: 'y'
+                },
+                {
+                    label: '环比涨跌(%)',
+                    data: chg,
+                    borderColor: C.orange,
+                    backgroundColor: C.orange + '40',
+                    fill: false,
+                    tension: 0.3,
+                    borderWidth: 1.5,
+                    borderDash: [5,3],
+                    pointRadius: 3,
+                    yAxisID: 'y1'
+                }
+            ]
+        },
+        options: {
+            ...baseChartOpts(),
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+                ...baseChartOpts().plugins,
+                legend: { display: true, position: 'top', labels: { color: '#8899aa', usePointStyle: true, padding: 16, font: { size: 11 } } }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#556677', font: { size: 10 } } },
+                y: {
+                    position: 'left',
+                    grid: { color: 'rgba(255,255,255,0.06)' },
+                    ticks: { color: color, font: { size: 11 } },
+                    min: 96, max: 102
+                },
+                y1: {
+                    position: 'right',
+                    grid: { display: false },
+                    ticks: { color: C.orange, font: { size: 10 }, callback: v => v + '%' }
+                }
+            }
+        }
+    });
+}
+
+// 7. 月度对比
+function chartMonthCompare() {
+    const ysf = sortZones(DATA.ysfMonth.filter(d => d.zone !== '全市'), 'zone');
+    const esf = sortZones(DATA.esfMonth.filter(d => d.zone !== '全市'), 'zone');
+    const zones = ysf.map(d => d.zone);
+
+    charts.mc = new Chart(document.getElementById('chart-month-compare'), {
+        type: 'bar',
+        data: {
+            labels: zones,
+            datasets: [
+                { label: '一手住宅成交', data: ysf.map(d => d.ts), backgroundColor: C.blue + 'AA', borderColor: C.blue, borderWidth: 1, borderRadius: 4 },
+                { label: '二手住宅成交', data: esf.map(d => esf.find(e => e.zone === d.zone)?.ts || 0), backgroundColor: C.orange + 'AA', borderColor: C.orange, borderWidth: 1, borderRadius: 4 }
+            ]
+        },
+        options: {
+            ...baseChartOpts(),
+            plugins: {
+                ...baseChartOpts().plugins,
+                legend: { display: true, position: 'top', labels: { color: '#8899aa', usePointStyle: true, padding: 16, font: { size: 11 } } },
+                tooltip: {
+                    ...baseChartOpts().plugins.tooltip,
+                    callbacks: { label: ctx => `${ctx.dataset.label}: ${fmt(ctx.parsed.y)} 套` }
+                }
+            }
+        }
+    });
+}
+
+// ==================== TABLE ====================
+function renderDehoTable() {
+    const tbody = document.querySelector('#deho-table tbody');
+    const maxInv = Math.max(...DATA.deho.filter(d => d.zone !== '全市').map(d => d.inv));
+    let html = '';
+
+    DATA.deho.forEach(d => {
+        const isCity = d.zone === '全市';
+        const cycleText = d.cycle < 0 ? 'N/A' : pct(d.cycle);
+        const cyclePct = d.cycle > 0 ? Math.min(d.cycle / 72 * 100, 100) : 0;
+        let tagClass = 'tag-ok', tagText = '健康';
+        if (d.cycle < 0) { tagClass = ''; tagText = '-'; }
+        else if (d.cycle > 48) { tagClass = 'tag-danger'; tagText = '高危'; }
+        else if (d.cycle > 24) { tagClass = 'tag-warn'; tagText = '偏高'; }
+        else if (d.cycle > 12) { tagClass = 'tag-warn'; tagText = '中等'; }
+
+        const barColor = d.cycle > 48 ? C.red : d.cycle > 24 ? C.orange : d.cycle > 12 ? C.yellow : C.green;
+        const invPct = maxInv > 0 ? Math.round(d.inv / maxInv * 100) : 0;
+
+        html += `<tr style="${isCity ? 'font-weight:700;background:rgba(79,172,254,0.06)' : ''}">
+            <td>${d.zone}</td>
+            <td class="num">${fmt(d.inv)}</td>
+            <td class="num">${pct(d.area)}</td>
+            <td class="num">${fmt(d.deal)}</td>
+            <td class="num">${fmt(d.rg)}</td>
+            <td class="num" style="font-weight:600">
+                ${d.cycle > 0 ? `<span style="color:${barColor}">${cycleText}</span>` : '-'}
+                <div class="deho-bar"><div class="deho-bar-fill" style="width:${cyclePct}%;background:${barColor}"></div></div>
+            </td>
+            <td>${tagText ? `<span class="tag ${tagClass}">${tagText}</span>` : '-'}</td>
+            <td>
+                <div class="deho-bar" style="width:120px"><div class="deho-bar-fill" style="width:${invPct}%;background:${C.blue}"></div></div>
+            </td>
+        </tr>`;
+    });
+    tbody.innerHTML = html;
+}
+
+// ==================== 成交均价图表 ====================
+function chartAvgPrice(canvasId, priceData, color) {
+    if (!priceData || priceData.length === 0) return;
+    const reversed = [...priceData]; // 数据已按时间正序排列(旧→新)
+    const labels = reversed.map(d => `${d.year}-${d.month}`);
+    const prices = reversed.map(d => d.avg_price);
+
+    new Chart(document.getElementById(canvasId), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '成交均价(元/m²)',
+                data: prices,
+                borderColor: color,
+                backgroundColor: color + '20',
+                fill: true,
+                tension: 0.3,
+                borderWidth: 2.5,
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                pointBackgroundColor: color,
+                pointBorderColor: '#0f1923',
+                pointBorderWidth: 2,
+            }]
+        },
+        options: {
+            ...baseChartOpts(),
+            plugins: {
+                ...baseChartOpts().plugins,
+                legend: { display: false },
+                tooltip: {
+                    ...baseChartOpts().plugins.tooltip,
+                    callbacks: {
+                        label: ctx => {
+                                const d = reversed[ctx.dataIndex];
+                                const mom = d.mom != null ? `  环比: ${d.mom > 0 ? '+' : ''}${d.mom}%` : '';
+                                const yoy = d.yoy != null ? `  同比: ${d.yoy > 0 ? '+' : ''}${d.yoy}%` : '';
+                                return [`均价: ${fmt(ctx.parsed.y)} 元/m²`, mom, yoy].filter(Boolean);
+                            }
+                    }
+                }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#556677', font: { size: 10 } } },
+                y: {
+                    grid: { color: 'rgba(255,255,255,0.06)' },
+                    ticks: { color: color, font: { size: 11 }, callback: v => (v/10000).toFixed(1) + '万' },
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+}
+
+// ==================== INIT ====================
+document.addEventListener('DOMContentLoaded', () => {
+    renderKPIs();
+    chartRgWq();
+    chartEsf();
+    chartInventory();
+    chartDeho();
+    chartXss();
+    chartPrice('chart-price-new', DATA.priceNew, '新房', C.blue);
+    chartPrice('chart-price-esf', DATA.priceEsf, '二手房', C.orange);
+    chartAvgPrice('chart-avg-new', DATA.avgPrice?.newHouse, C.blue);
+    chartAvgPrice('chart-avg-esf', DATA.avgPrice?.secondHand, C.orange);
+    chartMonthCompare();
+    renderDehoTable();
+});
+</script>
+</body>
+</html>

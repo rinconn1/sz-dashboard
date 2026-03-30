@@ -1,0 +1,193 @@
+- generic [ref=e2]:
+  - generic: 
+  - generic:  
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 广东政务服务网
+      - generic [ref=e8]: 深圳市房地产信息平台
+    - generic [ref=e9]:
+      - generic [ref=e10]: 登录
+      - generic [ref=e11] [cursor=pointer]: 旧版信息系统
+    - generic [ref=e60]:
+      - generic [ref=e62]:
+        - generic [ref=e78] [cursor=pointer]: 
+        - generic [ref=e80] [cursor=pointer]: 
+        - tablist [ref=e64]:
+          - tab "首 页" [ref=e65]
+          - tab "房源库 " [ref=e76]:
+            - text: 房源库
+            - generic: 
+          - tab "一手房成交 " [ref=e70]:
+            - text: 一手房成交
+            - generic: 
+          - tab "二手房成交 " [ref=e73]:
+            - text: 二手房成交
+            - generic: 
+          - tab "一手房预售房源 " [selected] [ref=e81]:
+            - text: 一手房预售房源
+            - generic [ref=e82]: 
+      - generic:
+        - tabpanel "一手房预售房源 "
+  - iframe [ref=e83]:
+    - generic [ref=f8e2]:
+      - generic [ref=f8e3]:
+        - generic [ref=f8e5]: 一手房房源信息
+        - generic [ref=f8e8] [cursor=pointer]: 刷新
+      - generic [ref=f8e10]:
+        - generic [ref=f8e11]:
+          - generic [ref=f8e12]:
+            - paragraph [ref=f8e13]: 所在区：
+            - generic [ref=f8e15] [cursor=pointer]: 全市
+            - generic [ref=f8e17] [cursor=pointer]: 宝安
+            - generic [ref=f8e19] [cursor=pointer]: 福田
+            - generic [ref=f8e21] [cursor=pointer]: 龙岗
+            - generic [ref=f8e23] [cursor=pointer]: 罗湖
+            - generic [ref=f8e25] [cursor=pointer]: 南山
+            - generic [ref=f8e27] [cursor=pointer]: 前海
+            - generic [ref=f8e29] [cursor=pointer]: 盐田
+            - generic [ref=f8e31] [cursor=pointer]: 龙华
+            - generic [ref=f8e33] [cursor=pointer]: 光明
+            - generic [ref=f8e35] [cursor=pointer]: 坪山
+            - generic [ref=f8e37] [cursor=pointer]: 大鹏
+            - generic [ref=f8e39] [cursor=pointer]: 深汕合作
+          - generic [ref=f8e43]:
+            - generic [ref=f8e44]:
+              - generic [ref=f8e45]: "项目查询:"
+              - textbox "请输入" [ref=f8e48]
+            - generic [ref=f8e49]:
+              - generic [ref=f8e50]: "开发企业:"
+              - textbox "请输入" [ref=f8e53]
+            - generic [ref=f8e54]:
+              - generic [ref=f8e55]: "宗地地址:"
+              - textbox "请输入" [ref=f8e58]
+            - button "查询" [ref=f8e59] [cursor=pointer]
+            - button "重置" [ref=f8e60] [cursor=pointer]
+        - list [ref=f8e63]:
+          - listitem [ref=f8e64] [cursor=pointer]:
+            - generic [ref=f8e69]:
+              - generic [ref=f8e70]: 预售证号：深房许字（2026）南山002号
+              - generic [ref=f8e71]: 项目名称：乐源雅居
+              - generic [ref=f8e72]: "所在区: 南山"
+              - generic [ref=f8e73]: 开发企业：深圳市西方多路通信技术有限公司
+              - generic [ref=f8e74]: 批准时间：2026-03-16
+          - listitem [ref=f8e75] [cursor=pointer]:
+            - generic [ref=f8e80]:
+              - generic [ref=f8e81]: 预售证号：深房许字（2026）南山001号
+              - generic [ref=f8e82]: 项目名称：后海沄玺花园
+              - generic [ref=f8e83]: "所在区: 南山"
+              - generic [ref=f8e84]: 开发企业：深圳市润海发展房地产有限公司
+              - generic [ref=f8e85]: 批准时间：2026-03-13
+          - listitem [ref=f8e86] [cursor=pointer]:
+            - generic [ref=f8e91]:
+              - generic [ref=f8e92]: 预售证号：深房许字（2026）宝安004号
+              - generic [ref=f8e93]: 项目名称：御品峦山雅苑
+              - generic [ref=f8e94]: "所在区: 宝安"
+              - generic [ref=f8e95]: 开发企业：深圳市景恒泰房地产开发有限公司
+              - generic [ref=f8e96]: 批准时间：2026-03-13
+          - listitem [ref=f8e97] [cursor=pointer]:
+            - generic [ref=f8e102]:
+              - generic [ref=f8e103]: 预售证号：深房许字（2026）坪山002号
+              - generic [ref=f8e104]: 项目名称：瑞云府
+              - generic [ref=f8e105]: "所在区: 坪山"
+              - generic [ref=f8e106]: 开发企业：深圳市高新健置业开发有限公司
+              - generic [ref=f8e107]: 批准时间：2026-03-09
+          - listitem [ref=f8e108] [cursor=pointer]:
+            - generic [ref=f8e113]:
+              - generic [ref=f8e114]: 预售证号：深房许字（2026）宝安003号
+              - generic [ref=f8e115]: 项目名称：珈誉未来花园
+              - generic [ref=f8e116]: "所在区: 宝安"
+              - generic [ref=f8e117]: 开发企业：深圳市鸿荣源控股（集团）有限公司
+              - generic [ref=f8e118]: 批准时间：2026-03-06
+          - listitem [ref=f8e119] [cursor=pointer]:
+            - generic [ref=f8e124]:
+              - generic [ref=f8e125]: 预售证号：深房许字（2026）深汕001号
+              - generic [ref=f8e126]: 项目名称：书境名苑
+              - generic [ref=f8e127]: "所在区: 深汕"
+              - generic [ref=f8e128]: 开发企业：深圳市中野塑业科技实业有限公司
+              - generic [ref=f8e129]: 批准时间：2026-02-12
+          - listitem [ref=f8e130] [cursor=pointer]:
+            - generic [ref=f8e135]:
+              - generic [ref=f8e136]: 预售证号：深房许字（2026）龙华003号
+              - generic [ref=f8e137]: 项目名称：未来平方云山府
+              - generic [ref=f8e138]: "所在区: 龙华"
+              - generic [ref=f8e139]: 开发企业：深圳市嘉创投资有限公司
+              - generic [ref=f8e140]: 批准时间：2026-02-13
+          - listitem [ref=f8e141] [cursor=pointer]:
+            - generic [ref=f8e146]:
+              - generic [ref=f8e147]: 预售证号：深房许字（2026）龙华002号
+              - generic [ref=f8e148]: 项目名称：启曜府
+              - generic [ref=f8e149]: "所在区: 龙华"
+              - generic [ref=f8e150]: 开发企业：深圳市亿年投资有限公司
+              - generic [ref=f8e151]: 批准时间：2026-01-30
+          - listitem [ref=f8e152] [cursor=pointer]:
+            - generic [ref=f8e157]:
+              - generic [ref=f8e158]: 预售证号：深房许字（2026）福田001号
+              - generic [ref=f8e159]: 项目名称：宸悦府
+              - generic [ref=f8e160]: "所在区: 福田"
+              - generic [ref=f8e161]: 开发企业：深圳市京基房地产股份有限公司
+              - generic [ref=f8e162]: 批准时间：2026-01-23
+          - listitem [ref=f8e163] [cursor=pointer]:
+            - generic [ref=f8e168]:
+              - generic [ref=f8e169]: 预售证号：深房许字（2026）龙华001号
+              - generic [ref=f8e170]: 项目名称：未来平方云山府
+              - generic [ref=f8e171]: "所在区: 龙华"
+              - generic [ref=f8e172]: 开发企业：深圳市嘉创投资有限公司
+              - generic [ref=f8e173]: 批准时间：2026-01-16
+          - listitem [ref=f8e174] [cursor=pointer]:
+            - generic [ref=f8e179]:
+              - generic [ref=f8e180]: 预售证号：深房许字（2026）宝安002号
+              - generic [ref=f8e181]: 项目名称：锦和玉鸣府
+              - generic [ref=f8e182]: "所在区: 宝安"
+              - generic [ref=f8e183]: 开发企业：深圳市绿秀地产开发有限责任公司
+              - generic [ref=f8e184]: 批准时间：2026-01-15
+          - listitem [ref=f8e185] [cursor=pointer]:
+            - generic [ref=f8e190]:
+              - generic [ref=f8e191]: 预售证号：深房许字（2026）坪山001号
+              - generic [ref=f8e192]: 项目名称：财富城明德苑（02-02地块）
+              - generic [ref=f8e193]: "所在区: 坪山"
+              - generic [ref=f8e194]: 开发企业：深圳市财富城投资有限公司
+              - generic [ref=f8e195]: 批准时间：2026-01-09
+        - generic [ref=f8e196]:
+          - generic [ref=f8e197]: 共 4353 条
+          - button "" [disabled] [ref=f8e198]:
+            - generic [ref=f8e199]: 
+          - list [ref=f8e200]:
+            - listitem [ref=f8e201]: "1"
+            - listitem [ref=f8e202] [cursor=pointer]: "2"
+            - listitem [ref=f8e203] [cursor=pointer]: "3"
+            - listitem [ref=f8e204] [cursor=pointer]: "4"
+            - listitem [ref=f8e205] [cursor=pointer]: "5"
+            - listitem [ref=f8e206] [cursor=pointer]: "6"
+            - listitem [ref=f8e207] [cursor=pointer]: 
+            - listitem [ref=f8e208] [cursor=pointer]: "363"
+          - button "" [ref=f8e209] [cursor=pointer]:
+            - generic [ref=f8e210]: 
+          - generic [ref=f8e211]:
+            - text: 前往
+            - spinbutton [ref=f8e213]: "1"
+            - text: 页
+  - generic [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "便民服务" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 便民服务
+      - menuitem "信息公开" [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]: 信息公开
+      - menuitem "房源库" [ref=e26] [cursor=pointer]:
+        - generic [ref=e28]: 房源库
+      - menuitem "导航菜单" [ref=e29] [cursor=pointer]:
+        - generic [ref=e31]: 导航菜单
+    - generic [ref=e32]:
+      - generic [ref=e33]: 主办：
+      - generic [ref=e34]: 深圳市住房和建设局
+      - generic [ref=e35]: 版权所有：
+      - generic [ref=e36]: 深圳市住房和建设局
+      - generic [ref=e37]: 粤ICP备2023053213号
+      - generic [ref=e38] [cursor=pointer]: 粤公网安备
+      - generic [ref=e39] [cursor=pointer]: 44030402002800号
+      - generic [ref=e40]: 网站标识码：
+      - generic [ref=e41]: "4403000005"
+      - generic [ref=e43]: 技术支持电话：
+      - generic [ref=e44]: 0755-23956106

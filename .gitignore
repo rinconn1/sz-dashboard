@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# WorkBuddy / CodeBuddy 内部文件
+.workbuddy/
+.codebuddy/
+.playwright-cli/
+
+# macOS
+.DS_Store
+
+# 临时文件
+*.log
+*.tmp

@@ -1,0 +1,180 @@
+- generic [ref=e2]:
+  - generic: 
+  - generic:  
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 广东政务服务网
+      - generic [ref=e8]: 深圳市房地产信息平台
+    - generic [ref=e9]:
+      - generic [ref=e10]: 登录
+      - generic [ref=e11] [cursor=pointer]: 旧版信息系统
+    - generic [ref=e60]:
+      - tablist [ref=e64]:
+        - tab "首 页" [ref=e65]
+        - tab "信息公开 " [ref=e69]:
+          - text: 信息公开
+          - generic: 
+        - tab "一手房成交 " [ref=e70]:
+          - text: 一手房成交
+          - generic: 
+        - tab "二手房成交 " [selected] [ref=e73]:
+          - text: 二手房成交
+          - generic [ref=e74]: 
+      - generic:
+        - tabpanel "二手房成交 "
+  - iframe [ref=e75]:
+    - generic [ref=f7e4]:
+      - generic [ref=f7e5]:
+        - generic [ref=f7e6]:
+          - generic [ref=f7e7]:
+            - text: 信息公开
+            - generic [ref=f7e8]: 
+          - generic [ref=f7e9]: 二手房成交
+        - generic [ref=f7e12] [cursor=pointer]: 刷新
+      - generic [ref=f7e15]:
+        - tablist [ref=f7e19]:
+          - tab "成交统计" [selected] [ref=f7e21]
+          - tab "价格指数" [ref=f7e22]
+        - tabpanel "成交统计" [ref=f7e24]:
+          - generic [ref=f7e25]:
+            - generic [ref=f7e28]: 2026年3月19日 二手房成交套数和面积饼图
+            - generic [ref=f7e35]:
+              - generic [ref=f7e36]:
+                - paragraph [ref=f7e37]: 所在区：
+                - generic [ref=f7e39] [cursor=pointer]: 全市
+                - generic [ref=f7e41] [cursor=pointer]: 罗湖
+                - generic [ref=f7e43] [cursor=pointer]: 福田
+                - generic [ref=f7e45] [cursor=pointer]: 南山
+                - generic [ref=f7e47] [cursor=pointer]: 盐田
+                - generic [ref=f7e49] [cursor=pointer]: 宝安
+                - generic [ref=f7e51] [cursor=pointer]: 龙岗
+                - generic [ref=f7e53] [cursor=pointer]: 坪山
+                - generic [ref=f7e55] [cursor=pointer]: 龙华
+                - generic [ref=f7e57] [cursor=pointer]: 大鹏新区
+                - generic [ref=f7e59] [cursor=pointer]: 光明
+                - generic [ref=f7e61] [cursor=pointer]: 深汕
+              - generic [ref=f7e62]:
+                - generic [ref=f7e63]: 2026年3月19日 （ 全市 ） 二手房成交信息
+                - generic [ref=f7e65]:
+                  - table [ref=f7e67]:
+                    - rowgroup [ref=f7e72]:
+                      - row "用途 成交面积(m²) 成交套数" [ref=f7e73]:
+                        - columnheader "用途" [ref=f7e74]:
+                          - generic [ref=f7e75]: 用途
+                        - columnheader "成交面积(m²)" [ref=f7e76]:
+                          - generic [ref=f7e77]: 成交面积(m²)
+                        - columnheader "成交套数" [ref=f7e78]:
+                          - generic [ref=f7e79]: 成交套数
+                  - table [ref=f7e81]:
+                    - rowgroup [ref=f7e86]:
+                      - row "商业 970.82 19" [ref=f7e87]:
+                        - cell "商业" [ref=f7e88]:
+                          - generic [ref=f7e89]: 商业
+                        - cell "970.82" [ref=f7e90]:
+                          - generic [ref=f7e91]: "970.82"
+                        - cell "19" [ref=f7e92]:
+                          - generic [ref=f7e93]: "19"
+                      - row "住宅 24630.36 247" [ref=f7e94]:
+                        - cell "住宅" [ref=f7e95]:
+                          - generic [ref=f7e96]: 住宅
+                        - cell "24630.36" [ref=f7e97]:
+                          - generic [ref=f7e98]: "24630.36"
+                        - cell "247" [ref=f7e99]:
+                          - generic [ref=f7e100]: "247"
+                      - row "办公 1259.68 10" [ref=f7e101]:
+                        - cell "办公" [ref=f7e102]:
+                          - generic [ref=f7e103]: 办公
+                        - cell "1259.68" [ref=f7e104]:
+                          - generic [ref=f7e105]: "1259.68"
+                        - cell "10" [ref=f7e106]:
+                          - generic [ref=f7e107]: "10"
+                      - row "其他 2506.91 55" [ref=f7e108]:
+                        - cell "其他" [ref=f7e109]:
+                          - generic [ref=f7e110]: 其他
+                        - cell "2506.91" [ref=f7e111]:
+                          - generic [ref=f7e112]: "2506.91"
+                        - cell "55" [ref=f7e113]:
+                          - generic [ref=f7e114]: "55"
+                      - row "小计 29367.77 331" [ref=f7e115]:
+                        - cell "小计" [ref=f7e116]:
+                          - generic [ref=f7e117]: 小计
+                        - cell "29367.77" [ref=f7e118]:
+                          - generic [ref=f7e119]: "29367.77"
+                        - cell "331" [ref=f7e120]:
+                          - generic [ref=f7e121]: "331"
+              - generic [ref=f7e122]:
+                - generic [ref=f7e123]:
+                  - text: 2026年2月 （ 全市 ） 二手房成交信息
+                  - paragraph [ref=f7e124]: 全市二手商品房成交为27.85万平方米（3025套），同比-33.56%；其中二手商品住宅成交为22.87万平方米（2339套），同比-37.98%
+                - generic [ref=f7e126]:
+                  - table [ref=f7e128]:
+                    - rowgroup [ref=f7e133]:
+                      - row "用途 成交面积(m²) 成交套数" [ref=f7e134]:
+                        - columnheader "用途" [ref=f7e135]:
+                          - generic [ref=f7e136]: 用途
+                        - columnheader "成交面积(m²)" [ref=f7e137]:
+                          - generic [ref=f7e138]: 成交面积(m²)
+                        - columnheader "成交套数" [ref=f7e139]:
+                          - generic [ref=f7e140]: 成交套数
+                  - table [ref=f7e142]:
+                    - rowgroup [ref=f7e147]:
+                      - row "商业 27204.64 384" [ref=f7e148]:
+                        - cell "商业" [ref=f7e149]:
+                          - generic [ref=f7e150]: 商业
+                        - cell "27204.64" [ref=f7e151]:
+                          - generic [ref=f7e152]: "27204.64"
+                        - cell "384" [ref=f7e153]:
+                          - generic [ref=f7e154]: "384"
+                      - row "住宅 228745.06 2339" [ref=f7e155]:
+                        - cell "住宅" [ref=f7e156]:
+                          - generic [ref=f7e157]: 住宅
+                        - cell "228745.06" [ref=f7e158]:
+                          - generic [ref=f7e159]: "228745.06"
+                        - cell "2339" [ref=f7e160]:
+                          - generic [ref=f7e161]: "2339"
+                      - row "办公 9630.32 91" [ref=f7e162]:
+                        - cell "办公" [ref=f7e163]:
+                          - generic [ref=f7e164]: 办公
+                        - cell "9630.32" [ref=f7e165]:
+                          - generic [ref=f7e166]: "9630.32"
+                        - cell "91" [ref=f7e167]:
+                          - generic [ref=f7e168]: "91"
+                      - row "其他 12964.93 211" [ref=f7e169]:
+                        - cell "其他" [ref=f7e170]:
+                          - generic [ref=f7e171]: 其他
+                        - cell "12964.93" [ref=f7e172]:
+                          - generic [ref=f7e173]: "12964.93"
+                        - cell "211" [ref=f7e174]:
+                          - generic [ref=f7e175]: "211"
+                      - row "小计 278544.94 3025" [ref=f7e176]:
+                        - cell "小计" [ref=f7e177]:
+                          - generic [ref=f7e178]: 小计
+                        - cell "278544.94" [ref=f7e179]:
+                          - generic [ref=f7e180]: "278544.94"
+                        - cell "3025" [ref=f7e181]:
+                          - generic [ref=f7e182]: "3025"
+  - generic [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "便民服务" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 便民服务
+      - menuitem "信息公开" [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]: 信息公开
+      - menuitem "房源库" [ref=e26] [cursor=pointer]:
+        - generic [ref=e28]: 房源库
+      - menuitem "导航菜单" [ref=e29] [cursor=pointer]:
+        - generic [ref=e31]: 导航菜单
+    - generic [ref=e32]:
+      - generic [ref=e33]: 主办：
+      - generic [ref=e34]: 深圳市住房和建设局
+      - generic [ref=e35]: 版权所有：
+      - generic [ref=e36]: 深圳市住房和建设局
+      - generic [ref=e37]: 粤ICP备2023053213号
+      - generic [ref=e38] [cursor=pointer]: 粤公网安备
+      - generic [ref=e39] [cursor=pointer]: 44030402002800号
+      - generic [ref=e40]: 网站标识码：
+      - generic [ref=e41]: "4403000005"
+      - generic [ref=e43]: 技术支持电话：
+      - generic [ref=e44]: 0755-23956106

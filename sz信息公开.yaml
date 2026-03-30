@@ -1,0 +1,99 @@
+- generic [ref=e2]:
+  - generic: 
+  - generic:  
+  - generic: 
+  - generic: 
+  - generic: 
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 广东政务服务网
+      - generic [ref=e8]: 深圳市房地产信息平台
+    - generic [ref=e9]:
+      - generic [ref=e10]: 登录
+      - generic [ref=e11] [cursor=pointer]: 旧版信息系统
+    - generic [ref=e60]:
+      - tablist [ref=e64]:
+        - tab "首 页" [ref=e65]
+        - tab "信息公开 " [selected] [ref=e69]:
+          - text: 信息公开
+          - generic [ref=e67]: 
+        - tab "一手房成交 " [ref=e70]:
+          - text: 一手房成交
+          - generic: 
+      - generic:
+        - tabpanel "信息公开 "
+  - iframe [ref=e68]:
+    - generic [ref=f5e3]:
+      - generic [ref=f5e4]:
+        - heading "市场信息" [level=2] [ref=f5e5]
+        - generic [ref=f5e6]:
+          - link "二手房参考价" [ref=f5e7] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e8]: 二手房参考价
+          - link "一手房成交" [ref=f5e9] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e10]: 一手房成交
+          - link "二手房成交" [ref=f5e11] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e12]: 二手房成交
+          - link "商品住房成交量" [ref=f5e13] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e14]: 商品住房成交量
+      - generic [ref=f5e15]:
+        - heading "行业信息" [level=2] [ref=f5e16]
+        - generic [ref=f5e17]:
+          - link "行业综合查询" [ref=f5e18] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e19]: 行业综合查询
+          - link "开发行业" [ref=f5e20] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e21]: 开发行业
+          - link "经纪行业" [ref=f5e22] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e23]: 经纪行业
+          - link "估价行业" [ref=f5e24] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e25]: 估价行业
+      - generic [ref=f5e26]:
+        - heading "其它信息" [level=2] [ref=f5e27]
+        - generic [ref=f5e28]:
+          - link "房地产大事记" [ref=f5e29] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e30]: 房地产大事记
+          - link "文件汇编" [ref=f5e31] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e32]: 文件汇编
+          - link "房地产相关下载" [ref=f5e33] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e34]: 房地产相关下载
+          - link "房地产开发企业二级资质核准网办操作指引" [ref=f5e35] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e36]: 房地产开发企业二级资质核准网办操作指引
+          - link "房地产估价机构备案网办操作指引" [ref=f5e37] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e38]: 房地产估价机构备案网办操作指引
+          - link "房地产经纪机构及分支机构备案网办操作指引" [ref=f5e39] [cursor=pointer]:
+            - /url: "javascript:"
+            - generic [ref=f5e40]: 房地产经纪机构及分支机构备案网办操作指引
+  - generic [ref=e17]:
+    - menubar [ref=e19]:
+      - menuitem "便民服务" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: 便民服务
+      - menuitem "信息公开" [active] [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]: 信息公开
+      - menuitem "房源库" [ref=e26] [cursor=pointer]:
+        - generic [ref=e28]: 房源库
+      - menuitem "导航菜单" [ref=e29] [cursor=pointer]:
+        - generic [ref=e31]: 导航菜单
+    - generic [ref=e32]:
+      - generic [ref=e33]: 主办：
+      - generic [ref=e34]: 深圳市住房和建设局
+      - generic [ref=e35]: 版权所有：
+      - generic [ref=e36]: 深圳市住房和建设局
+      - generic [ref=e37]: 粤ICP备2023053213号
+      - generic [ref=e38] [cursor=pointer]: 粤公网安备
+      - generic [ref=e39] [cursor=pointer]: 44030402002800号
+      - generic [ref=e40]: 网站标识码：
+      - generic [ref=e41]: "4403000005"
+      - generic [ref=e43]: 技术支持电话：
+      - generic [ref=e44]: 0755-23956106
