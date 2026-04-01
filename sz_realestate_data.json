@@ -17,8 +17,8 @@
     "esfDate": "",
     "kcDate": "",
     "dh_month": 0.0,
-    "avg12m": 2451.1,
-    "history_months": 11
+    "avg12m": 2326.6,
+    "history_months": 10
   },
   "rg_district": [
     {
@@ -75,8 +75,8 @@
       "deal": 0,
       "rg": 0,
       "cycle": 0.0,
-      "avg12m": 2451.1,
-      "history_months": 11
+      "avg12m": 2326.6,
+      "history_months": 10
     },
     {
       "zone": "罗湖",
@@ -298,8 +298,8 @@
     "esf": "",
     "xsf": ""
   },
-  "updateTime": "2026-03-31 06:04",
-  "refMonth": "2026-03",
+  "updateTime": "2026-04-01 06:18",
+  "refMonth": "2026-04",
   "avgPrice": {
     "source": "中指研究院/中指云 (cih-index.com)",
     "newHouse": [
