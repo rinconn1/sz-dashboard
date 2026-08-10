@@ -1,20 +1,20 @@
 {
-  "dataDate": "2026年08月08日",
+  "dataDate": "2026年08月09日",
   "kpi": {
-    "rg_ts": 48,
-    "rg_mj": 4536.69,
-    "wq_ts": 55,
-    "wq_mj": 5904.69,
-    "wq_xs_ts": 21,
-    "wq_ys_ts": 34,
-    "esf_ts": 59,
-    "esf_mj": 5354.98,
+    "rg_ts": 35,
+    "rg_mj": 3361.76,
+    "wq_ts": 38,
+    "wq_mj": 4508.54,
+    "wq_xs_ts": 9,
+    "wq_ys_ts": 29,
+    "esf_ts": 51,
+    "esf_mj": 4573.5,
     "kc_ts": 20490,
     "kc_mj": 2249233.21,
     "last_deal": 2154,
-    "dataDate": "2026年08月08日",
-    "wqDate": "2026年08月08日",
-    "esfDate": "2026年8月8日",
+    "dataDate": "2026年08月09日",
+    "wqDate": "2026年08月09日",
+    "esfDate": "2026年8月9日",
     "kcDate": "2026年7月",
     "dh_month": 9.9,
     "avg12m": 2069.2,
@@ -23,11 +23,11 @@
   "rg_district": [
     {
       "name": "罗湖",
-      "value": 1
+      "value": 0
     },
     {
       "name": "福田",
-      "value": 0
+      "value": 1
     },
     {
       "name": "南山",
@@ -35,27 +35,27 @@
     },
     {
       "name": "盐田",
-      "value": 1
+      "value": 0
     },
     {
       "name": "宝安",
-      "value": 18
+      "value": 21
     },
     {
       "name": "龙岗",
-      "value": 4
+      "value": 5
     },
     {
       "name": "龙华",
-      "value": 10
+      "value": 2
     },
     {
       "name": "光明",
-      "value": 14
+      "value": 5
     },
     {
       "name": "坪山",
-      "value": 0
+      "value": 1
     },
     {
       "name": "大鹏",
@@ -68,40 +68,40 @@
   ],
   "wq_district": [
     {
+      "name": "光明",
+      "value": 3
+    },
+    {
       "name": "宝安",
-      "value": 24
+      "value": 11
     },
     {
       "name": "龙华",
-      "value": 5
+      "value": 10
+    },
+    {
+      "name": "罗湖",
+      "value": 2
+    },
+    {
+      "name": "福田",
+      "value": 4
+    },
+    {
+      "name": "龙岗",
+      "value": 4
+    },
+    {
+      "name": "南山",
+      "value": 2
+    },
+    {
+      "name": "盐田",
+      "value": 1
     },
     {
       "name": "坪山",
       "value": 1
-    },
-    {
-      "name": "罗湖",
-      "value": 3
-    },
-    {
-      "name": "龙岗",
-      "value": 7
-    },
-    {
-      "name": "福田",
-      "value": 1
-    },
-    {
-      "name": "南山",
-      "value": 1
-    },
-    {
-      "name": "盐田",
-      "value": 0
-    },
-    {
-      "name": "光明",
-      "value": 13
     },
     {
       "name": "大鹏",
@@ -622,7 +622,7 @@
     "esf": "全市二手商品房成交为60.83万平方米（5865套），同比+5.94%；其中二手商品住宅成交为48.32万平方米（4795套），同比+3.66%",
     "xsf": "全市现售商品房成交为22.03万平方米（2155套），同比-7.89%；其中商品住宅成交为14.00万平方米（1375套），同比+15.54%"
   },
-  "updateTime": "2026-08-09 01:58",
+  "updateTime": "2026-08-10 02:03",
   "refMonth": "2026-07",
   "avgPrice": {
     "source": "中指研究院/中指云 (cih-index.com)",
